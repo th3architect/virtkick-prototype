@@ -1,0 +1,66 @@
+@import 'bootstrap-customize';
+@import 'fonts';
+
+
+@mixin gradient {
+  background: linear-gradient(37deg, $dark, $medium);
+
+  &, * {
+    color: #ffffff;
+  }
+}
+
+footer {
+  @include gradient;
+  text-align: center;
+  padding: 5px;
+  margin-top: 20px;
+
+  a:hover {
+    color: $light;
+  }
+}
+
+#old-browser {
+  text-align: center;
+  z-index: 1001;
+
+  div {
+    display: inline-block;
+    width: 450px;
+    padding: 20px;
+    background-color: #ff8c1a;
+    margin: 0 auto;
+  }
+}
+
+#page-index {
+  $item-total-width: 200px;
+
+  .items {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+    li {
+      $item-width: 120px;
+      width: $item-width;
+      display: inline-block;
+      margin: 0 ($item-total-width - $item-width) / 2;
+      padding: 10px 0;
+      background-color: $light;
+      border-radius: 10px;
+
+      span {
+        font-size: 150%;
+      }
+    }
+  }
+
+  .create {
+    margin: 40px auto;
+    text-align: center;
+    width: 4 * $item-total-width;
+  }
+}

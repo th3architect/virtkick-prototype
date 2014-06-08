@@ -1,5 +1,62 @@
----
-title: HTML5 Boilerplate Middleman
----
+<div id="page-index">
+  <% @header = 'Dashboard' %>
 
-<p>Hello world! This is HTML5 Boilerplate.</p>
+  <ul class="items">
+    <li class="text-center">
+      <span>6</span><br/>
+      machines
+    </li>
+    <li class="text-center">
+      <span>12 GB</span><br/>
+      memory
+    </li>
+    <li class="text-center">
+      <span>120 GB</span><br/>
+      storage
+    </li>
+    <li class="text-center">
+      <span>$50</span><br/>
+      monthly
+    </li>
+  </ul>
+
+  <div class="create">
+    <a href="/machines/new" class="btn btn-default btn-block">
+      Create a new machine
+    </a>
+  </div>
+
+
+  <h2>
+    Announcements
+    &nbsp;
+    <span style="font-size: 16px;">
+      <a href="/">
+        mark all read
+      </a>
+    </span>
+
+  </h2>
+
+  <div>
+    <a href="/" style="float: right">
+
+
+    </a>
+
+    <i class="fa fa-exclamation-triangle"></i>
+    Maintenance window: June 12th.<br/>
+    Due to a security vulnerability in Linux kernel (CVE-123-456) we scheduled a maintenance window for June 12th.<br/>
+    Your machines will be inaccessible for about 5 minutes each. Sorry for inconvenience.
+
+  </div>
+
+</div>
+
+<% content_for :scripts do %>
+  <script>
+    $(function () {
+
+    })
+  </script>
+<% end %>
