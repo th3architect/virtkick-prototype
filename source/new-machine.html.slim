@@ -1,0 +1,47 @@
+#page-new-machine
+  - @header = 'Create a Machine'
+
+  form role='form'
+    .form-group
+       label for='machine_name' Machine name
+       input#machine_name type='text' autofocus=''
+    .form-group
+      h2 Choose a plan
+      .form-group.text-center
+        .plans.btn-group data-toggle="buttons"
+          - for plan in [['1 GB', '$10/mo'], ['2 GB', '$20/mo'], ['4 GB', '$40/mo'], ['8 GB', '$80/mo'], ['16 GB', '$160/mo']]
+            label.btn.btn-info.plan
+              input type="radio"
+              span = plan[0]
+              br
+              = plan[1]
+      .plan-details.text-center style='visibility: hidden'
+        | Processors:
+        span.vcpus  1
+        br
+        | Storage:
+        span.storage  30 GB
+    .form-group
+      h2 Pick an image
+      .form-group.text-center
+        .image-types.btn-group data-toggle="buttons"
+          - for type in ['Appliance', 'Snapshot', 'Mount an ISO']
+            label.btn.btn-info.image-type
+              input type="radio"
+              span = type
+
+
+- content_for :scripts do
+    javascript:
+      $(function() {
+        $('.plan').click(function() {
+          $('.plan-details').css('visibility', 'visible');
+          memory = parseInt($(this).text());
+          storage = Math.ceil(Math.sqrt(memory) * 20);
+          vcpus = Math.ceil(memory / 4);
+
+          $('.plan-details .storage').text(' ' + storage + ' GB');
+          $('.plan-details .vcpus').text(' ' + vcpus);
+        });
+      });
+

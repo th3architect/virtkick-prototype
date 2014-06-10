@@ -80,3 +80,43 @@ footer {
     }
   }
 }
+
+#page-new-machine {
+  .plans.btn-group {
+    .btn {
+      margin: 0 20px;
+      border-radius: 5px;
+      width: 120px;
+
+      &.btn-info.active {
+        box-shadow: none !important;
+        background-color: $medium-dark;
+        color: white;
+        border: solid 1px $medium-dark;
+      }
+
+      span {
+        font-size: 150%;
+      }
+    }
+  }
+
+  .image-types.btn-group {
+    .btn {
+      margin: 0 20px;
+      border-radius: 5px;
+
+      &.btn-info.active {
+        box-shadow: none !important;
+        background-color: $medium-dark;
+        color: white;
+        border: solid 1px $medium-dark;
+      }
+
+      span {
+        font-size: 150%;
+      }
+    }
+  }
+
+}

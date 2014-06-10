@@ -6,6 +6,7 @@ $medium-light: #FF733E;
 $light: #FFD285;
 
 // Bootstrap overrides, lookup the names at http://getbootstrap.com/customize/
+$text-color: lighten(#000, 20%);
 $brand-primary: $medium-dark;
 $body-bg: $bg;
 $grid-columns: 12;
@@ -17,6 +18,9 @@ $headings-color: $medium-dark;
 $input-border-focus: $medium-dark;
 $table-bg-accent: #FDEEEE;
 $table-border-color: $medium-dark;
+
+$brand-info: $light;
+$btn-info-color: $text-color;
 
 $navbar-margin-top: 0;
 $navbar-default-border: #A73E5C;
