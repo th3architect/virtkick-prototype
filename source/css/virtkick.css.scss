@@ -119,4 +119,32 @@ footer {
     }
   }
 
+  .distros.btn-group {
+    margin-top: 20px;
+
+    .btn {
+      margin: 0 10px;
+      border-radius: 5px;
+      width: 120px;
+      height: 120px;
+      background-color: $bg;
+      border-width: 2px;
+
+      &.btn-info.active {
+        box-shadow: none !important;
+        border: solid 2px $medium-dark;
+      }
+
+      span {
+        font-size: 150%;
+      }
+
+      img {
+        margin-top: 5px;
+        max-width: 70px;
+        max-height: 70px;
+      }
+    }
+  }
+
 }

@@ -30,6 +30,16 @@
               input type="radio"
               span = type
 
+      .form-group.text-center
+        .distros.btn-group data-toggle="buttons"
+          - for distro in ['Ubuntu', 'Debian', 'CentOS', 'OpenSuse', 'Arch Linux', 'FreeBSD']
+            label.btn.btn-info.plan
+              input type="radio"
+              - file = '/img/distros/' + distro.downcase.gsub(' ', '-') + '.png'
+              = distro
+              br
+              img src=file
+
 
 - content_for :scripts do
     javascript:
