@@ -2,9 +2,9 @@
   - @header = 'Create a Machine'
 
   form role='form'
-    .form-group
-       label for='machine_name' Machine name
-       input#machine_name type='text' autofocus=''
+    .form-group.details
+      input#machine_name type='text' autofocus='' placeholder='Enter Machine Name'
+
     .form-group
       h2 Choose a plan
       .form-group.text-center
@@ -21,24 +21,46 @@
         br
         | Storage:
         span.storage  30 GB
+
     .form-group
       h2 Pick an image
       .form-group.text-center
         .image-types.btn-group data-toggle="buttons"
-          - for type in ['Appliance', 'Snapshot', 'Mount an ISO']
+          - for type in [['Appliance', 'appliances'], ['Mount ISO', 'isos'], ['Snapshot', 'snapshots']]
             label.btn.btn-info.image-type
-              input type="radio"
-              span = type
+              input type="radio" class=type[1]
+              span = type[0]
 
-      .form-group.text-center
-        .distros.btn-group data-toggle="buttons"
+        .image-type-group.appliances.isos.btn-group data-toggle="buttons"
           - for distro in ['Ubuntu', 'Debian', 'CentOS', 'OpenSuse', 'Arch Linux', 'FreeBSD']
-            label.btn.btn-info.plan
+            label.btn.btn-info.distro
               input type="radio"
               - file = '/img/distros/' + distro.downcase.gsub(' ', '-') + '.png'
               = distro
               br
               img src=file
+
+        .image-type-group.snapshots.text-left.btn-group data-toggle="buttons"
+          br
+          table.table.table-striped
+            thead
+              tr
+                th.name Name
+                th.storage Size
+                th.date Taken
+            tbody
+              tr
+                td.name  HTTP Server
+                td.storage 2 GB
+                td.date 3 days ago
+              tr
+                td.name OpenStack
+                td.storage 12 GB
+                td.date a year ago
+
+    .form-group.text-center
+      a.create.btn.btn-primary.btn-lg href='/machine.html'
+        | Create a Machine
 
 
 - content_for :scripts do
@@ -53,5 +75,24 @@
           $('.plan-details .storage').text(' ' + storage + ' GB');
           $('.plan-details .vcpus').text(' ' + vcpus);
         });
-      });
 
+        $('.image-type-group').hide();
+
+        $('.image-type').click(function() {
+          $('.image-type-group').hide();
+          var selected = $(this).find('input').attr('class');
+          $('.image-type-group.' + selected).show();
+        });
+
+        $('.create').hide();
+
+        $('.distro').click(function() {
+          $('.create').show();
+        });
+
+        $('.snapshots tbody tr').click(function() {
+          $(this).siblings().removeClass('selected');
+          $(this).addClass('selected');
+          $('.create').show();
+        });
+      });
