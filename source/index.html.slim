@@ -1,0 +1,35 @@
+#page-index
+  - @header = 'Dashboard'
+  ul.items
+    li.text-center
+      span 6
+      br
+      | machines
+    li.text-center
+      span 12 GB
+      br
+      | memory
+    li.text-center
+      span 120 GB
+      br
+      | storage
+    li.text-center
+      span $50
+      br
+      | monthly
+  .create
+    a.btn.btn-default.btn-block href='/new-machine.html'
+      | Create a new machine
+  h2
+    | Announcements &nbsp;
+    span style='font-size: 16px;'
+      a href='/'
+        | mark all read
+  div
+    a href='/' style='float: right'
+    i.fa.fa-exclamation-triangle
+    | Maintenance window: June 12th.
+    br
+    | Due to a security vulnerability in Linux kernel (CVE-123-456) we scheduled a maintenance window for June 12th.
+    br
+    | Your machines will be inaccessible for about 5 minutes each. Sorry for inconvenience.
