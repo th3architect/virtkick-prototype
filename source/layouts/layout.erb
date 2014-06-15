@@ -16,10 +16,11 @@
           <img src="/img/virtkick-logo-pixelart-100.png" style="margin-top: 20px; margin-bottom: 20px;"/>
         </div>
         <div class="col-md-6" style="padding-top: 20px">
-          <h1>
-            <%= @header %>
+          <% if @header %>
+            <h1><%= @header %></h1>
+          <% else %>
             <%= yield_content :header %>
-          </h1>
+          <% end %>
         </div>
         <div class="col-md-4 text-right" style="padding-top: 50px">
           Howdy Nowaker

@@ -192,3 +192,32 @@ footer {
     margin-top: 30px;
   }
 }
+
+.state-running {
+  color: #20A11A;
+}
+
+#page-machine {
+  .tab-content {
+    margin-top: 15px;
+  }
+
+  #power {
+    .overview span {
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    .power-state {
+      margin-top: 10px;
+    }
+    .screenshot {
+      margin-top: 20px;
+
+      img.only-on.disabled  {
+        display: none;
+      }
+    }
+  }
+}
