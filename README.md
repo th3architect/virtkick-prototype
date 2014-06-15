@@ -4,11 +4,11 @@
 [![Build status](https://img.shields.io/travis/virtkick/virtkick-prototype.svg)](https://travis-ci.org/virtkick/virtkick-prototype)
 [![Dependencies status](http://img.shields.io/gemnasium/virtkick/virtkick-prototype.svg)](https://gemnasium.com/virtkick/virtkick-prototype)
 
-This is a website of VirtKick, a 1-click cloud management center.
+This is a prototype of VirtKick webapp, a 1-click cloud management center.
 It's built with [Middleman](http://middlemanapp.com/).
-Visit [https://www.virtkick.io/](https://www.virtkick.io/) to preview.
+Visit [demo.virtkick.io](https://demo.virtkick.io/) to preview.
 
-The sources are licensed under GNU AGPL, see [LICENSE.md](https://github.com/virtkick/virtkick-prototype/blob/master/LICENSE.md).
+The sources are licensed under GNU AGPL unless otherwise stated. See [LICENSE.md](https://github.com/virtkick/virtkick-prototype/blob/master/LICENSE.md).
 
 ## Requirements
 
