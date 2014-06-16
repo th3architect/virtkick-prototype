@@ -23,4 +23,8 @@
       if (hash.length > 0) {
         $('a.' + hash).click();
       }
+
+      $('.nav-tabs a').click(function() {
+        window.location.hash = $(this).attr('class');
+      });
     });
