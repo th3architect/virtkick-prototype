@@ -5,18 +5,13 @@
 
 
 #page-machine
+  - tabs = %w(power console stats storage scheduler settings)
   ul.nav.nav-tabs
-    - for tab in ['Power', 'Console', 'Stats', 'Storage', 'Scheduler', 'Settings']
-      li class="#{'active' if tab == 'Power'}"
-        - clazz = tab.downcase
-        a data-toggle='tab' href="##{clazz}" class=clazz = tab
+    - for tab in tabs
+      li class="#{'active' if tab == 'power'}"
+        a data-toggle='tab' href="##{tab}" class=tab = tab.capitalize
 
   .tab-content.text-center
-    #power.tab-pane.active
-      = partial 'machine-power'
-    #console.tab-pane
-      = partial 'machine-console'
-    #stats.tab-pane Stats: TBD
-    #storage.tab-pane Storage: TBD
-    #scheduler.tab-pane Scheduler: TBD
-    #settings.tab-pane Settings: TBD
+    - for page in tabs
+      .tab-pane id=page class="#{'active' if page == 'power'}"
+        = partial 'machine-' + page
