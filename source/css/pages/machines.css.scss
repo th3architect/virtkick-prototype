@@ -1,0 +1,16 @@
+#page-machines {
+  .create {
+    margin: 30px auto;
+    text-align: center;
+    width: 80%
+  }
+
+  table {
+    .name {
+      width: 70%;
+    }
+    .memory, .storage {
+      text-align: right;
+    }
+  }
+}

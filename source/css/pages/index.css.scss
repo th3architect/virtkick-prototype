@@ -1,0 +1,30 @@
+#page-index {
+  $item-total-width: 200px;
+
+  .items {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+    li {
+      $item-width: 120px;
+      width: $item-width;
+      display: inline-block;
+      margin: 0 ($item-total-width - $item-width) / 2;
+      padding: 10px 0;
+      background-color: $light;
+      border-radius: 10px;
+
+      span {
+        font-size: 150%;
+      }
+    }
+  }
+
+  .create {
+    margin: 40px auto;
+    text-align: center;
+    width: 4 * $item-total-width;
+  }
+}

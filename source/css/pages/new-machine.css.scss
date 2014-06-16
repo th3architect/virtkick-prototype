@@ -1,0 +1,111 @@
+#page-new-machine {
+  .details {
+    text-align: center;
+    input {
+      margin: 0 auto;
+      width: 80%;
+    }
+  }
+
+  .plans.btn-group {
+    .btn {
+      margin: 0 20px;
+      border-radius: 5px;
+      width: 120px;
+
+      &.btn-info.active {
+        box-shadow: none !important;
+        background-color: $medium-dark;
+        color: white;
+        border: solid 1px $medium-dark;
+      }
+
+      span {
+        font-size: 150%;
+      }
+    }
+  }
+
+  .image-types.btn-group {
+    .btn {
+      margin: 0 20px;
+      border-radius: 5px;
+
+      &.btn-info.active {
+        box-shadow: none !important;
+        background-color: $medium-dark;
+        color: white;
+        border: solid 1px $medium-dark;
+      }
+
+      span {
+        font-size: 150%;
+      }
+    }
+  }
+
+  .appliances.btn-group, .isos.btn-group {
+    margin-top: 20px;
+
+    .btn {
+      margin: 0 10px;
+      border-radius: 5px;
+      width: 120px;
+      height: 120px;
+      background-color: $bg;
+      border-width: 2px;
+
+      &.btn-info.active {
+        box-shadow: none !important;
+        border: solid 2px $medium-dark;
+      }
+
+      span {
+        font-size: 150%;
+      }
+
+      img {
+        margin-top: 5px;
+        max-width: 70px;
+        max-height: 70px;
+      }
+    }
+  }
+
+  .snapshots.btn-group {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+
+    table {
+      margin: 0 auto;
+
+      .name {
+        width: 60%;
+      }
+      .storage, .date {
+        text-align: right;
+      }
+
+      tbody tr:hover {
+        td {
+          cursor: pointer;
+          color: $text-color;
+          background-color: $light;
+        }
+
+      }
+
+      tbody tr.selected {
+        td {
+          color: white;
+          background-color: $medium-dark;
+        }
+      }
+    }
+  }
+
+  .create {
+    margin-top: 30px;
+  }
+}
