@@ -199,7 +199,7 @@ footer {
 
 #page-machine {
   .tab-content {
-    margin-top: 15px;
+    margin-top: 25px;
   }
 
   #power {
@@ -218,6 +218,12 @@ footer {
       img.only-on.disabled  {
         display: none;
       }
+    }
+  }
+
+  #console {
+    canvas {
+      margin-bottom: 10px;
     }
   }
 }

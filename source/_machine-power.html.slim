@@ -1,0 +1,101 @@
+.overview
+  span Memory: 2 GB
+  span Processors: 2
+  span CPU usage: 14%
+
+.btn-group
+  a.action.start.btn.btn-default.disabled type='button'
+    i.fa.fa-play
+    | &nbsp; Start
+  a.action.pause.only-on.btn.btn-default type='button'
+    i.fa.fa-pause
+    | &nbsp; Pause
+  a.action.resume.only-on.btn.btn-default type='button'
+    i.fa.fa-forward
+    | &nbsp; Resume
+  a.action.stop.only-on.btn.btn-default type='button'
+    i.fa.fa-stop
+    | &nbsp; Stop
+  .btn-group
+    button.only-on.btn.btn-default.dropdown-toggle type='button' data-toggle='dropdown'
+      i.fa.fa-caret-down
+    ul.dropdown-menu
+      li
+        a.action href='#'
+          span.fa.fa-power-off
+          | &nbsp; Hard stop
+  a.action.restart.only-on.btn.btn-default type='button'
+    i.fa.fa-repeat
+    | &nbsp; Restart
+  .btn-group
+    button.only-on.btn.btn-default.dropdown-toggle type='button' data-toggle='dropdown'
+      i.fa.fa-caret-down
+    ul.dropdown-menu
+      li
+        a.action href='#'
+          span.fa.fa-power-off
+          | &nbsp; Hard reset
+
+.power-state
+  | State: &nbsp;
+  span running
+
+.screenshot
+  a href='#console'
+    img.only-on src='/img/machine-screenshot.png'
+
+- content_for :scripts do
+  javascript:
+    $(function() {
+      $('#power .resume').hide();
+
+      $('#power a.action').click(function() {
+        var state = $('#power').find('.power-state span');
+        var action = $(this).text().toLowerCase().trim();
+        var actions = {
+          start: ['starting...', 'running'],
+          pause: ['paused', null, 'resume'],
+          resume: ['running', null, 'pause'],
+          stop: ['stopping...', 'stopped'],
+          restart: ['restarting...', 'running'],
+          'hard-stop': ['stopped'],
+          'hard-reset': ['starting...', 'running']
+        };
+
+        var changeState = function(newState) {
+          state.text(newState);
+        };
+
+        var newState = actions[action][0];
+        var newStateAfterDelay = actions[action][1];
+        var showNewButton = actions[action][2];
+
+        changeState(newState, showNewButton);
+        if (showNewButton) {
+          $(this).hide();
+          $('.' + showNewButton).show();
+        }
+
+
+        if (newStateAfterDelay) {
+          setTimeout(function () {
+            changeState(newStateAfterDelay);
+          }, 1.5 * 1000);
+        }
+      });
+
+      $('#power a.start').click(function() {
+        $('.state').addClass('state-running');
+        $('.only-on').removeClass('disabled');
+        $('.start').addClass('disabled');
+      });
+      $('#power a.stop').click(function() {
+        $('.state').removeClass('state-running');
+        $('.only-on').addClass('disabled');
+        $('.start').removeClass('disabled');
+      });
+
+      $('.screenshot a').click(function() {
+        $('.console').click();
+      });
+    });
