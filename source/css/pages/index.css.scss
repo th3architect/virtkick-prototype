@@ -29,4 +29,15 @@
     text-align: center;
     width: 4 * $item-total-width;
   }
+
+  .announcements {
+    h3 {
+      margin-bottom: 5px;
+    }
+
+    div {
+      margin-left: 5px;
+      margin-bottom: 20px;
+    }
+  }
 }

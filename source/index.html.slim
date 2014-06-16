@@ -20,16 +20,34 @@
   .create
     a.btn.btn-default.btn-block href='/new-machine.html'
       | Create a new machine
-  h2
-    | Announcements &nbsp;
-    span style='font-size: 16px;'
-      a href='/'
-        | mark all read
-  div
-    a href='/' style='float: right'
-    i.fa.fa-exclamation-triangle
-    | Maintenance window: June 12th.
-    br
-    | Due to a security vulnerability in Linux kernel (CVE-123-456) we scheduled a maintenance window for June 12th.
-    br
-    | Your machines will be inaccessible for about 5 minutes each. Sorry for inconvenience.
+
+  .announcements
+    h2
+      | Announcements &nbsp;
+      span style='font-size: 16px;'
+        a href='/'
+          | mark all read
+
+    div
+      a href='/' style='float: right'
+      h3
+        i.fa.fa-info-circle
+        |  This is just a prototype: June 16th.
+
+      | Howdy, partner! Thank you for stumbling upon a prototype of VirtKick, a 1-Click Cloud Management Center.
+      br
+      | This clickable prototype lets you get a feeling how quick and easy it will be to manage your cloud.
+      br
+      | Stay tuned for a Kickstarter campaign that will make VirtKick a reality!
+      a href='https://www.virtkick.io/'  Subscribe to a newsletter now
+      | .
+
+    div
+      a href='/' style='float: right'
+      h3
+        i.fa.fa-exclamation-triangle
+        |  Maintenance window: June 12th.
+
+      | Due to a security vulnerability in Linux kernel (CVE-123-456) we scheduled a maintenance window for June 12th.
+      br
+      | Your machines will be inaccessible for about 5 minutes each. Sorry for inconvenience.
