@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:Nowaker/sprockets-less.git
+  remote: https://github.com/Nowaker/sprockets-less.git
   revision: 7d3622593fbd4575a80a77fe626d969dadd38c51
   branch: feature/middleman-support
   specs:
