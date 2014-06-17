@@ -1,4 +1,9 @@
 #page-storage.text-center
+
+  .create
+    a.btn.btn-default.btn-block
+      | Create a new disk
+
   table.table.table-striped.text-left
     thead
       tr
@@ -21,6 +26,11 @@
             a.btn.btn-danger Delete
         tr.snapshot.hidden
           td.name colspan='3'
+            | Version 4 of 2014-06-19
+          td.actions
+            a.btn.btn-danger Restore
+        tr.snapshot.hidden
+          td.name colspan='3'
             | Version 3 of 2014-06-15
           td.actions
             a.btn.btn-danger Restore
@@ -34,11 +44,35 @@
             | Version 1 of 2014-05-23 &nbsp;
           td.actions
             a.btn.btn-danger Restore
+      tr.new
+        td.name
+          input.form-control placeholder='disk name'
+          |  .qcow2
+        td.type
+          select.form-control
+            option SSD
+            option HDD
+        td.size
+          select.size.form-control
+            option 20
+            option 50
+            option 100
+            option 250
+          |  GB
+        td.actions
+          a.btn.btn-default Create
+
 
 - content_for :scripts do
   javascript:
     $(function() {
       $('a.expand-snapshots').click(function() {
-        $(this).closest('tr').nextAll('tr.snapshot').slice(0, 3).removeClass('hidden');
+        $(this).closest('tr').nextAll('tr.snapshot').slice(0, 4).removeClass('hidden');
+      });
+
+      //$('#page-storage .new').hide();
+
+      $('#page-storage .create').click(function() {
+        $('#page-storage .new').show();
       });
     });
