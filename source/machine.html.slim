@@ -11,7 +11,7 @@
       li class="#{'active' if tab == 'power'}"
         a data-toggle='tab' href="##{tab}" class=tab = tab.capitalize
 
-  .tab-content.text-center
+  .tab-content
     - for page in tabs
       .tab-pane id=page class="#{'active' if page == 'power'}"
         = partial 'machine-' + page

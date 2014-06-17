@@ -1,0 +1,36 @@
+#page-machine #storage {
+  text-align: left;
+
+  table {
+    width: 80%;
+    margin: 0 auto;
+
+    td, th {
+      vertical-align: middle;
+    }
+
+    th.name {
+      width: 45%;
+    }
+
+    td.actions {
+      text-align: right;
+
+      a.btn {
+        display: inline-block;
+        margin-left: 3px;
+        margin-right: 3px;
+      }
+    }
+
+    tr.snapshot {
+      td.name {
+        padding-left: 30px;
+      }
+
+      * {
+        font-size: 14px !important;
+      }
+    }
+  }
+}

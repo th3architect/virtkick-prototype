@@ -1,48 +1,49 @@
-.overview
-  span Memory: 2 GB
-  span Processors: 2
-  span CPU usage: 14%
+#page-power.text-center
+  .overview
+    span Memory: 2 GB
+    span Processors: 2
+    span CPU usage: 14%
 
-.btn-group
-  a.action.start.btn.btn-default.disabled type='button'
-    i.fa.fa-play
-    | &nbsp; Start
-  a.action.pause.only-on.btn.btn-default type='button'
-    i.fa.fa-pause
-    | &nbsp; Pause
-  a.action.resume.only-on.btn.btn-default type='button'
-    i.fa.fa-forward
-    | &nbsp; Resume
-  a.action.stop.only-on.btn.btn-default type='button'
-    i.fa.fa-stop
-    | &nbsp; Stop
   .btn-group
-    button.only-on.btn.btn-default.dropdown-toggle type='button' data-toggle='dropdown'
-      i.fa.fa-caret-down
-    ul.dropdown-menu
-      li
-        a.action href='#'
-          span.fa.fa-power-off
-          | &nbsp; Hard stop
-  a.action.restart.only-on.btn.btn-default type='button'
-    i.fa.fa-repeat
-    | &nbsp; Restart
-  .btn-group
-    button.only-on.btn.btn-default.dropdown-toggle type='button' data-toggle='dropdown'
-      i.fa.fa-caret-down
-    ul.dropdown-menu
-      li
-        a.action href='#'
-          span.fa.fa-power-off
-          | &nbsp; Hard reset
+    a.action.start.btn.btn-default.disabled type='button'
+      i.fa.fa-play
+      | &nbsp; Start
+    a.action.pause.only-on.btn.btn-default type='button'
+      i.fa.fa-pause
+      | &nbsp; Pause
+    a.action.resume.only-on.btn.btn-default type='button'
+      i.fa.fa-forward
+      | &nbsp; Resume
+    a.action.stop.only-on.btn.btn-default type='button'
+      i.fa.fa-stop
+      | &nbsp; Stop
+    .btn-group
+      button.only-on.btn.btn-default.dropdown-toggle type='button' data-toggle='dropdown'
+        i.fa.fa-caret-down
+      ul.dropdown-menu
+        li
+          a.action href='#'
+            span.fa.fa-power-off
+            | &nbsp; Hard stop
+    a.action.restart.only-on.btn.btn-default type='button'
+      i.fa.fa-repeat
+      | &nbsp; Restart
+    .btn-group
+      button.only-on.btn.btn-default.dropdown-toggle type='button' data-toggle='dropdown'
+        i.fa.fa-caret-down
+      ul.dropdown-menu
+        li
+          a.action href='#'
+            span.fa.fa-power-off
+            | &nbsp; Hard reset
 
-.power-state
-  | State: &nbsp;
-  span running
+  .power-state
+    | State: &nbsp;
+    span running
 
-.screenshot
-  a href='#console'
-    img.only-on src='/img/machine-screenshot.png'
+  .screenshot
+    a href='#console'
+      img.only-on src='/img/machine-screenshot.png'
 
 - content_for :scripts do
   javascript:

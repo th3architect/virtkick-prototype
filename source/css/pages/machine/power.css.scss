@@ -1,0 +1,18 @@
+#page-machine #power {
+  .overview span {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .power-state {
+    margin-top: 10px;
+  }
+  .screenshot {
+    margin-top: 20px;
+
+    img.only-on.disabled {
+      display: none;
+    }
+  }
+}

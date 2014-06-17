@@ -1,9 +1,10 @@
-div
-  canvas
-p
-  | If VNC console doesn't appear, try upgrading your browser or trying a different one.
+#page-console.text-center
+  div
+    canvas
+  p
+    | If VNC console doesn't appear, try upgrading your browser or trying a different one.
 
-= javascript_include_tag '/js/novnc.js'
+  = javascript_include_tag '/js/novnc.js'
 
 - content_for :scripts do
   javascript:
