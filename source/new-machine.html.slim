@@ -3,7 +3,10 @@
 
   form role='form'
     .form-group.details
-      input#machine_name type='text' autofocus='' placeholder='Enter Machine Name'
+      input.form-control#machine_name type='text' autofocus='' placeholder='Enter Machine Name'
+
+    .form-group.appliance.text-center
+      p Arch Linux appliance with nginx, MariaDB, PHP will be used.
 
     .form-group
       h2 Choose a plan
@@ -22,7 +25,7 @@
         | Storage:
         span.storage  30 GB
 
-    .form-group
+    .form-group.image
       h2 Pick an image
       .form-group.text-center
         .image-types.btn-group data-toggle="buttons"
@@ -74,6 +77,10 @@
 
           $('.plan-details .storage').text(' ' + storage + ' GB');
           $('.plan-details .vcpus').text(' ' + vcpus);
+
+          if (window.location.hash == '#appliance') {
+            $('.create').show();
+          }
         });
 
         $('.image-type-group').hide();
@@ -95,4 +102,8 @@
           $(this).addClass('selected');
           $('.create').show();
         });
+
+        if (window.location.hash == '#appliance') {
+          $('.form-group.image').hide();
+        }
       });
