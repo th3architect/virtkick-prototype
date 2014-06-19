@@ -23,6 +23,19 @@
       - for distro in ['Arch Linux', 'Ubuntu Server', 'Fedora', 'FreeBSD', 'OpenNebula', 'SmartOS', 'ReactOS']
         option = distro
 
+  h3 Users
+
+  p These users are able to manage this machine as well:
+
+  ul.users
+    - for user in %w(kwiat Rush m13 johndoe)
+      li
+        a.user
+          i.fa.fa-times
+        = " #{user} (#{user.downcase}@mailinator.com)"
+
+
+
   h3 Danger Zone
 
   p
@@ -38,5 +51,7 @@
 - content_for :scripts do
   javascript:
     $(function() {
-
+      $('#page-settings a.user').click(function() {
+        $(this).closest('li').remove();
+      });
     });
