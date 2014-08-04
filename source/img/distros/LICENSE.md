@@ -14,3 +14,5 @@ The mark FreeBSD is a registered trademark of The FreeBSD Foundation. [link](htt
 openSUSE and the openSUSE logo are registered trademarks of Novell, Inc. [link](http://en.opensuse.org/openSUSE:Trademark_guidelines)
 
 Ubuntu is a registered trademark of Canonical Ltd. [link](http://design.ubuntu.com/brand/ubuntu-logo)
+
+Docker is a registered trademark of Docker, Inc. [link](https://www.docker.com/legal/trademark_guidelines/)

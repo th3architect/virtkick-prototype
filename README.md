@@ -8,7 +8,13 @@ This is a prototype of VirtKick webapp, a 1-click cloud management center.
 It's built with [Middleman](http://middlemanapp.com/).
 Visit [demo.virtkick.io](https://demo.virtkick.io/) to preview.
 
-The sources are licensed under GNU AGPL unless otherwise stated. See [LICENSE.md](https://github.com/virtkick/virtkick-prototype/blob/master/LICENSE.md).
+The sources are licensed under GNU AGPLv3 or later, unless otherwise stated.
+See [LICENSE.md](https://github.com/virtkick/virtkick-prototype/blob/master/LICENSE.md).
+
+## Disclaimer
+
+This is MVP - a minimum viable product. I don't code like what you see in this repository!
+The real webapp will be well-crafted with AngularJS.
 
 ## Requirements
 

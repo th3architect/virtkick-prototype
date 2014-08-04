@@ -61,6 +61,8 @@
                 td.storage 12 GB
                 td.date a year ago
 
+        .image-type-group.containers.btn
+
     .form-group.text-center
       a.create.btn.btn-primary.btn-lg href='/machine.html'
         | Create a Machine
@@ -69,6 +71,11 @@
 - content_for :scripts do
     javascript:
       $(function() {
+        var applianceChosen = window.location.hash == '#appliance';
+        if (!applianceChosen) {
+          $('.appliance').hide();
+        }
+
         $('.plan').click(function() {
           $('.plan-details').css('visibility', 'visible');
           memory = parseInt($(this).text());
@@ -78,8 +85,9 @@
           $('.plan-details .storage').text(' ' + storage + ' GB');
           $('.plan-details .vcpus').text(' ' + vcpus);
 
-          if (window.location.hash == '#appliance') {
+          if (applianceChosen) {
             $('.create').show();
+            $('.appliance').hide();
           }
         });
 
