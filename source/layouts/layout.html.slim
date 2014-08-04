@@ -24,11 +24,10 @@ html
           a href='/'
             img src='/img/virtkick-logo-pixelart-100.png' style='margin-top: 20px; margin-bottom: 20px;'
         .col-md-6 style='padding-top: 20px'
-            - if @header
-                h1 = @header
-            - else
-                = yield_content :header
-                | xd
+          - if @header
+            h1 = @header
+          - else
+            = yield_content :header
         .col-md-4.text-right style='padding-top: 50px'
           | Howdy Nowaker
             &nbsp;&nbsp;&nbsp;
@@ -50,7 +49,7 @@ html
         .col-md-10
           = yield
 
-    footer
+    footer.navbar.navbar-fixed-bottom
       a href='https://www.virtkick.io/' VirtKick
       | &copy; 2014 StratusHost Damian Nowak
 

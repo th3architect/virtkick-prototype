@@ -10,6 +10,10 @@
   }
 }
 
+body {
+  padding-bottom: 50px;
+}
+
 footer {
   @include gradient;
   text-align: center;
