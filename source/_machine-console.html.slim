@@ -2,7 +2,12 @@
   div
     canvas
   p
-    | If VNC console doesn't appear, try upgrading your browser or trying a different one.
+    | VM stuck? Sometimes this may help. &nbsp;
+    button.ctrlaltdel
+      i.fa-refresh.fa
+      |  Send Ctrl+Alt+Del
+  p
+    | If the VNC console doesn't appear, please upgrade your browser or trying a different one.
 
   = javascript_include_tag '/js/novnc.js'
 
