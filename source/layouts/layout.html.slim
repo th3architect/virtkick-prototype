@@ -23,6 +23,16 @@ html
   body
     .container
       .row
+        .col-md-10.col-md-offset-2
+          .prototype-alert.hidden.alert.alert-warning.alert-dismissible role='alert'
+            | This is a static prototype of VirtKick user panel.
+            br
+            | Please visit&nbsp;
+            a.link href='https://www.virtkick.io/' virtkick.io
+            |  for more details.&nbsp;
+            a.dismiss href='#' data-dismiss='alert' [dismiss]
+
+      .row
         .col-md-2.text-center
           a href='/'
             img src='/img/virtkick-logo-pixelart-100.png' style='margin-top: 20px; margin-bottom: 20px;'
@@ -32,10 +42,10 @@ html
           - else
             = yield_content :header
         .col-md-4.text-right style='padding-top: 50px'
-          | Howdy Nowaker
+          | Howdy Partner!
             &nbsp;&nbsp;&nbsp;
           a href='https://www.virtkick.io/' class='btn btn-primary'
-            | logout&nbsp;&nbsp;
+            | Back to virtkick.io&nbsp;&nbsp;
             i.fa.fa-sign-out
 
       .row
@@ -52,9 +62,6 @@ html
         .col-md-10
           = yield
 
-    footer.navbar.navbar-fixed-bottom
-      a href='https://www.virtkick.io/' VirtKick
-      | &copy; 2014 StratusHost Damian Nowak
 
     script src='/js/virtkick.js'
     = yield_content :scripts

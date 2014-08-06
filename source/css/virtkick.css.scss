@@ -10,6 +10,25 @@
   }
 }
 
+.prototype-alert {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #A1CFA5;
+  color: #637A64;
+  text-align: center;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      border-bottom: solid 1px !important;
+      text-decoration: none;
+    }
+  }
+}
+
 body {
   padding-bottom: 50px;
 }
