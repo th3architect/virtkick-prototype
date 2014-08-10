@@ -6,4 +6,9 @@ script:
 - bundle exec middleman build --verbose
 notifications:
   email: false
+  irc:
+    channels:
+    - 'chat.freenode.net#virtkick'
+    template:
+    - '%{result}: %{repository} %{commit} %{commit_message}'
 
