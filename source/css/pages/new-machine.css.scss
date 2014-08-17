@@ -84,12 +84,12 @@
         text-align: right;
       }
 
-      tbody {
-        tr {
-          border-left: solid $active-border-px $grouping;
-          border-right: solid $active-border-px $grouping;
-        }
+      tr {
+        border-left: solid $active-border-px $grouping;
+        border-right: solid $active-border-px $grouping;
+      }
 
+      tbody {
         tr:hover {
           border-left: solid $active-border-px $brand-primary;
 

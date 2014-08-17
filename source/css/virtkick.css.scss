@@ -22,9 +22,11 @@
   }
 }
 
+
 .header.row {
   margin-top: 30px;
   margin-bottom: 20px;
+  $header-height: 100px;
 
   .menu {
     font-size: 14px;
@@ -32,8 +34,8 @@
 
     img {
       padding: 10px;
-      width: 48px;
-      height: 48px;
+      width: $header-height;
+      height: $header-height;
       box-sizing: content-box;
       @include grouping;
     }
@@ -47,16 +49,15 @@
     display: table-cell;
     vertical-align: bottom;
     float: none;
-    height: 100px;
+    height: $header-height;
   }
 
   $padding-bottom: 15px;
 
   .header {
-    h1 {
-      @include bottom;
-      padding-bottom: $padding-bottom;
+    @include bottom;
 
+    h1 {
       span.oi {
         color: $brand-primary;
         font-size: 40px;
