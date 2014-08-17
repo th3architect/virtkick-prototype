@@ -1,5 +1,11 @@
+- @header = 'Dashboard'
+- @icon = 'dashboard'
+
+- content_for :action do
+  a.btn.btn-primary.btn-block href='/new-machine.html'
+    | Create a new machine
+
 #page-index
-  - @header = 'Dashboard'
   ul.items
     li.text-center
       span 6
@@ -17,9 +23,6 @@
       span $50
       br
       | monthly
-  .create
-    a.btn.btn-default.btn-block href='/new-machine.html'
-      | Create a new machine
 
   .announcements
     h2

@@ -2,12 +2,9 @@
 @import 'bootstrap';
 @import 'fonts';
 
-@mixin gradient {
-  background: linear-gradient(37deg, $dark, $medium);
-
-  &, * {
-    color: #ffffff;
-  }
+@mixin grouping {
+  background-color: $grouping;
+  border-radius: 4px;
 }
 
 .prototype-alert {
@@ -29,19 +26,86 @@
   }
 }
 
-body {
-  padding-bottom: 50px;
+.header.row {
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+  .menu {
+    font-size: 14px;
+    text-align: center;
+
+    img {
+      padding: 10px;
+      width: 48px;
+      height: 48px;
+      box-sizing: content-box;
+      @include grouping;
+    }
+
+    p {
+      margin-top: 10px;
+    }
+  }
+
+  @mixin bottom {
+    display: table-cell;
+    vertical-align: bottom;
+    float: none;
+    height: 100px;
+  }
+
+  $padding-bottom: 15px;
+
+  .header {
+    h1 {
+      @include bottom;
+      padding-bottom: $padding-bottom;
+
+      span.oi {
+        color: $brand-primary;
+        font-size: 40px;
+        position: relative;
+        top: 8px;
+        padding-right: 12px;
+      }
+    }
+  }
+
+  .action {
+    @include bottom;
+
+    .btn-primary {
+      padding-top: 15px;
+      padding-bottom: $padding-bottom;
+    }
+  }
 }
 
-footer {
-  @include gradient;
-  text-align: center;
-  padding-top: 5px;
-  min-height: 35px !important;
-  height: 35px !important;
+.navbar {
+  border: 0 !important;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  @include grouping;
 
-  a:hover {
-    color: $light;
+  li {
+    width: 100%;
+    border: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  span.oi {
+    font-size: 24px;
+    margin-right: 10px;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    border-radius: 4px;
+  }
+
+  .active span.oi {
+    color: $navbar-default-bg;
+    background-color: $brand-primary;
   }
 }
 
@@ -59,4 +123,4 @@ footer {
 }
 
 @import 'pages/*';
-@import 'vendor/bootstrap-combobox';
+@import 'vendor/*';

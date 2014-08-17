@@ -1,10 +1,11 @@
+- @header = 'Machines'
+- @icon = 'monitor'
+
+- content_for :action do
+  a.btn.btn-primary.btn-block href='/new-machine.html'
+    | Create a new machine
+
 #page-machines
-  - @header = 'Machines'
-
-  .create
-    a.btn.btn-default.btn-block href='/new-machine.html'
-      | Create a new machine
-
   table.table.table-striped
     thead
       tr
