@@ -18,7 +18,7 @@
       padding-bottom: 15px;
 
       & + div {
-        border-top: solid 1px $medium-dark;
+        border-top: solid 1px $table-border-color;
       }
 
       p:last-child {
@@ -27,7 +27,7 @@
       }
 
       &.support {
-        background-color: $table-bg-accent;
+        background-color: $table-border-color;
       }
 
       .question {
