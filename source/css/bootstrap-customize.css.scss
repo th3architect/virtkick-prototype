@@ -48,3 +48,8 @@ label {
 }
 
 $icon-font-path: '/font/';
+
+@mixin grouping {
+  background-color: $grouping;
+  border-radius: 4px;
+}

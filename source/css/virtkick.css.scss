@@ -2,10 +2,6 @@
 @import 'bootstrap';
 @import 'fonts';
 
-@mixin grouping {
-  background-color: $grouping;
-  border-radius: 4px;
-}
 
 .prototype-alert {
   width: 500px;
@@ -106,6 +102,21 @@
   .active span.oi {
     color: $navbar-default-bg;
     background-color: $brand-primary;
+  }
+}
+
+h1 {
+  i {
+    color: $brand-primary;
+    padding: 10px;
+    display: inline-block;
+
+    &.oi {
+      font-size: 24px;
+      position: relative;
+      top: 5px;
+      margin-right: 10px;
+    }
   }
 }
 
