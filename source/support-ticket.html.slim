@@ -1,7 +1,12 @@
 - @header = 'Support'
+- @icon = 'flag'
+
+- content_for :action do
+  a.btn.btn-primary.btn-block href='/support-ticket.html'
+    | Request support
 
 #page-support-ticket
-  h3
+  h2
     | Subject: can't start a newly created VM
     span reported 3 days ago
 
@@ -43,7 +48,7 @@
 
     .customer.feedback.thanks
       p
-        | Thanks for letting us know! &nbsp;
+        | Thanks for letting us know! We marked your issue as solved. &nbsp;
         a href='/support.html' Go back to support requests.
 
 - content_for :scripts do

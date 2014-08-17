@@ -46,10 +46,7 @@
   }
 
   @mixin bottom {
-    display: table-cell;
-    vertical-align: bottom;
-    float: none;
-    height: $header-height;
+    margin-top: 60px;
   }
 
   $padding-bottom: 15px;
@@ -58,6 +55,9 @@
     @include bottom;
 
     h1 {
+      margin-top: 0;
+      margin-bottom: 0;
+
       span.oi {
         color: $brand-primary;
         font-size: 40px;
