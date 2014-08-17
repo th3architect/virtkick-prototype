@@ -1,6 +1,7 @@
-#page-new-machine
-  - @header = 'Create a Machine'
+- @header = 'Create a New Machine'
+- @icon = 'monitor'
 
+#page-new-machine
   form role='form'
     .form-group.details
       input.form-control#machine_name type='text' autofocus='' placeholder='Enter Machine Name'
@@ -9,43 +10,42 @@
       p Arch Linux appliance with nginx, MariaDB, PHP will be used.
 
     .form-group
-      h2 Choose a plan
+      h2
+        i.oi.oi-cart
+        | Choose a plan
       .form-group.text-center
-        .plans.btn-group data-toggle="buttons"
-          - for plan in [['1 GB', '$10/mo'], ['2 GB', '$20/mo'], ['4 GB', '$40/mo'], ['8 GB', '$80/mo'], ['16 GB', '$160/mo']]
+        .plans.btn-group data-toggle='buttons'
+          - for plan in [[1, 20, 1], [2, 40, 1], [4, 60, 2], [8, 80, 3], [16, 100, 4]]
             label.btn.btn-info.plan
               input type="radio"
-              span = plan[0]
+              span.title = "#{plan[0]} GB RAM"
               br
-              = plan[1]
-      .plan-details.text-center style='visibility: hidden'
-        | Processors:
-        span.vcpus  1
-        br
-        | Storage:
-        span.storage  30 GB
+              span.val = "#{plan[1]} GB SSD"
+              br
+              span.val = "#{plan[2]} CPU"
 
     .form-group.image
-      h2 Pick an image
+      h2
+        i.oi.oi-aperture
+        | Pick an image
       .form-group.text-center
-        .image-types.btn-group data-toggle="buttons"
+        .image-types.btn-group data-toggle='buttons'
           - for type in [['Appliance', 'appliances'], ['Mount ISO', 'isos'], ['Snapshot', 'snapshots']]
             label.btn.btn-info.image-type
               input type="radio" class=type[1]
-              span = type[0]
+              span.title = type[0]
 
         .image-type-group.appliances.isos.btn-group data-toggle="buttons"
           - for distro in ['Ubuntu', 'Debian', 'CentOS', 'OpenSuse', 'Arch Linux', 'FreeBSD']
             label.btn.btn-info.distro
-              input type="radio"
               - file = '/img/distros/' + distro.downcase.gsub(' ', '-') + '.png'
-              = distro
-              br
               img src=file
+              br
+              input type='radio'
+              = distro
 
-        .image-type-group.snapshots.text-left.btn-group data-toggle="buttons"
-          br
-          table.table.table-striped
+        .image-type-group.snapshots.text-left.btn-group data-toggle='buttons'
+          table.table
             thead
               tr
                 th.name Name
@@ -77,14 +77,6 @@
         }
 
         $('.plan').click(function() {
-          $('.plan-details').css('visibility', 'visible');
-          memory = parseInt($(this).text());
-          storage = Math.ceil(Math.sqrt(memory) * 20);
-          vcpus = Math.ceil(memory / 4);
-
-          $('.plan-details .storage').text(' ' + storage + ' GB');
-          $('.plan-details .vcpus').text(' ' + vcpus);
-
           if (applianceChosen) {
             $('.create').show();
             $('.appliance').hide();

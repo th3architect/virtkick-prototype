@@ -105,20 +105,15 @@
   }
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
   i {
     color: $brand-primary;
     padding: 10px;
     display: inline-block;
-
-    &.oi {
-      font-size: 24px;
-      position: relative;
-      top: 5px;
-      margin-right: 10px;
-    }
+    margin-right: 5px;
   }
 }
+
 
 #old-browser {
   text-align: center;

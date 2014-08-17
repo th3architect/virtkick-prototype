@@ -5,6 +5,7 @@ $medium: #EC4863;
 $medium-light: #FF733E;
 
 $grouping: #F4F2E9;
+$grouping-active: #F7F0F1;
 $light: $grouping;
 
 // Bootstrap overrides, lookup the names at http://getbootstrap.com/customize/
@@ -19,10 +20,9 @@ $font-size-h2: 26px;
 $font-size-h3: $font-size-base;
 
 $input-border-focus: $medium-dark;
-$table-bg-accent: #FDEEEE;
-$table-border-color: $medium-dark;
+$table-border-color: #F0DDEB;
 
-$brand-info: $light;
+$brand-info: $grouping;
 $btn-info-color: $text-color;
 
 $navbar-margin-top: 0;

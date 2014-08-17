@@ -1,70 +1,63 @@
 @import 'bootstrap-customize';
 
 #page-new-machine {
+  $active-border-px: 5px;
+
+  .form-group {
+    margin-bottom: 50px;
+  }
+
+  .btn-group {
+    .btn {
+      $padding: 10px;
+
+      padding-top: $padding;
+      padding-bottom: $padding;
+      margin: 0 20px;
+      @include grouping;
+
+      &.btn-info.active, &.btn-info:hover {
+        box-shadow: none !important;
+        background-color: $grouping-active;
+        border-color: $table-border-color;
+        border-bottom: solid $active-border-px $brand-primary;
+        padding-bottom: $padding - $active-border-px;
+      }
+
+      span.title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      span.val {
+        font-size: 16px;
+      }
+    }
+  }
+
   .details {
     text-align: center;
     input {
       margin: 0 auto;
-      width: 80%;
+      width: 100%;
     }
   }
 
   .plans.btn-group {
     .btn {
-      margin: 0 20px;
-      border-radius: 5px;
       width: 120px;
-
-      &.btn-info.active {
-        box-shadow: none !important;
-        background-color: $medium-dark;
-        color: white;
-        border: solid 1px $medium-dark;
-      }
-
-      span {
-        font-size: 150%;
-      }
     }
   }
 
   .image-types.btn-group {
-    .btn {
-      margin: 0 20px;
-      border-radius: 5px;
-
-      &.btn-info.active {
-        box-shadow: none !important;
-        background-color: $medium-dark;
-        color: white;
-        border: solid 1px $medium-dark;
-      }
-
-      span {
-        font-size: 150%;
-      }
-    }
+    margin-bottom: 50px;
   }
 
   .appliances.btn-group, .isos.btn-group {
-    margin-top: 20px;
-
     .btn {
       margin: 0 10px;
-      border-radius: 5px;
       width: 120px;
       height: 120px;
-      background-color: $bg;
-      border-width: 2px;
-
-      &.btn-info.active {
-        box-shadow: none !important;
-        border: solid 2px $medium-dark;
-      }
-
-      span {
-        font-size: 150%;
-      }
 
       img {
         margin-top: 5px;
@@ -76,11 +69,13 @@
 
   .snapshots.btn-group {
     display: block;
-    width: 50%;
-    margin: 0 auto;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 
     table {
       margin: 0 auto;
+      background-color: $grouping;
 
       .name {
         width: 60%;
@@ -89,19 +84,27 @@
         text-align: right;
       }
 
-      tbody tr:hover {
-        td {
-          cursor: pointer;
-          color: $text-color;
-          background-color: $light;
+      tbody {
+        tr {
+          border-left: solid $active-border-px $grouping;
+          border-right: solid $active-border-px $grouping;
         }
 
-      }
+        tr:hover {
+          border-left: solid $active-border-px $brand-primary;
 
-      tbody tr.selected {
-        td {
-          color: white;
-          background-color: $medium-dark;
+          td {
+            cursor: pointer;
+            background-color: $grouping-active;
+          }
+        }
+
+        tr.selected {
+          border-left: solid $active-border-px $brand-primary;
+
+          td {
+            background-color: $grouping-active;
+          }
         }
       }
     }
