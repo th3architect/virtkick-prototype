@@ -11,9 +11,13 @@ html
     link rel='stylesheet' href='/css/virtkick.css'
     = javascript_include_tag '/js/snippets.js'
   body
+    .mobile-newsletter.hidden-md.hidden-lg
+      .container
+        = partial 'newsletter'
+
     .container
       .row.header
-        .menu.col-md-3
+        .menu.col-md-3.hidden-xs.hidden-sm
           a href='/'
             img src='/img/virtkick-logo-pixelart-100.png'
 
@@ -32,40 +36,41 @@ html
 
       .row
         .col-md-3
-          nav class='navbar navbar-default' role='navigation'
-            ul.nav.navbar-nav.nav-stacked
-              = navbar_item '/' do
-                span.oi.oi-monitor
-                | Machines
-              = navbar_item '/images.html' do
-                span.oi.oi-aperture
-                | Images
-              = navbar_item '/addons.html' do
-                span.oi.oi-beaker
-                | Add-ons
-              = navbar_item '/billing.html' do
-                span.oi.oi-credit-card
-                | Billing
-              = navbar_item '/support.html' do
-                span.oi.oi-flag
-                | Support
+          nav.navbar.navbar-default role="navigation"
+            .container
+              .navbar-header.hidden-md.hidden-lg
+                button.navbar-toggle data-target="#navbar-collapsable" data-toggle="collapse" type="button"
+                  span.sr-only Toggle navigation
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar
+                a.navbar-brand href='/'
+                  img src='/img/virtkick-logo-pixelart-48.png' class='pix'
+                  |  virt
+                  span.kick kick
+              #navbar-collapsable.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                  = navbar_item '/' do
+                    span.oi.oi-monitor
+                    | Machines
+                  = navbar_item '/images.html' do
+                    span.oi.oi-aperture
+                    | Images
+                  = navbar_item '/addons.html' do
+                    span.oi.oi-beaker
+                    | Add-ons
+                  = navbar_item '/billing.html' do
+                    span.oi.oi-credit-card
+                    | Billing
+                  = navbar_item '/support.html' do
+                    span.oi.oi-flag
+                    | Support
+                  = navbar_item 'https://www.virtkick.io', class: 'hidden-md hidden-lg' do
+                    span.fa.fa-rocket
+                    | Back to VirtKick.io
 
-          .newsletter.text-center
-            .description
-              p VirtKick a simple, open source alternative to OpenStack and SolusVM.
-              p
-                | This is just a static prototype.
-                br
-                | Sign up for beta now!
-
-            form.form-inline action='https://virtkick.us8.list-manage.com/subscribe/post?u=b74a227fdbddc9f590a62114e&amp;id=08823d8a7b' method='post' role='form'
-
-              .input-group
-                input#newsletter-email.form-control.input name='EMAIL' placeholder='e-mail address' type='text'
-                span.input-group-btn
-                  input.btn.btn-primary name='subscribe' type='submit' value='go!'
-
-            p.result data-success='Thanks! Please check your e-mail.'
+          .desktop.hidden-xs.hidden-sm.text-center
+            = partial 'newsletter'
 
             a.back href='https://www.virtkick.io/' class='btn btn-primary'
               | Back to VirtKick.io&nbsp;&nbsp;

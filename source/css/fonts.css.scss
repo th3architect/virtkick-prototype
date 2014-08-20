@@ -17,8 +17,11 @@
   src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(/font/source-sans-pro-bold.woff) format('woff');
 }
 
-@import 'font-awesome';
-
-.fa-border {
-//  border: solid 2px $medium-dark;
+@font-face {
+  font-family: 'Earthbound';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Earthbound'), local('Earthbound-Regular'), url(/font/earthbound.woff) format('woff');
 }
+
+@import 'font-awesome';

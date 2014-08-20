@@ -13,6 +13,7 @@ $text-color: #554F57;
 $brand-primary: $medium-dark;
 $body-bg: $bg;
 $grid-columns: 12;
+$grid-float-breakpoint: 992px;
 $font-family-sans-serif: 'Source Sans Pro', sans-serif;
 $font-size-base: 18px;
 $font-size-h1: 32px;
@@ -37,6 +38,8 @@ $navbar-default-link-hover-bg: $light;
 $navbar-default-link-hover-color: $medium-dark;
 
 $navbar-padding-vertical: 7px;
+$navbar-height: 68px;
+
 
 $nav-link-hover-bg: $light;
 $nav-tabs-active-link-hover-color: $brand-primary;

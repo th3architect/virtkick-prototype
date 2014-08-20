@@ -77,7 +77,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-    
+
+## source/font/earthbound.woff, earthbound.otf
+
+Retrieved font [Open Font Library](http://openfontlibrary.org/en/font/earthbound).
+
+Licensed under [OFL (SIL Open Font License)](http://scripts.sil.org/OFL).
+
+
 ## source/font/source-sans-pro.woff, source-sans-pro-bold.woff
 
 Copyright 2010, 2012, 2014 Adobe Systems Incorporated (http://www.adobe.com/), with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.

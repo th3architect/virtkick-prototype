@@ -46,7 +46,9 @@
   }
 
   @mixin bottom {
-    margin-top: 60px;
+    @media(min-width: $screen-md) {
+      margin-top: 60px;
+    }
   }
 
   $padding-bottom: 15px;
@@ -70,6 +72,7 @@
 
   .action {
     @include bottom;
+    margin-top: 24px;
 
     .btn-primary {
       padding-top: 15px;
@@ -78,19 +81,54 @@
   }
 }
 
-.navbar {
+
+@media(max-width: $screen-sm-max) {
+  body {
+    padding-top: $navbar-height;
+  }
+
+  // Can't use @extend inside media query - need to copy .navbar-fixed-top definition
+  nav.navbar {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    border-radius: 0;
+    top: 0;
+
+    .navbar-collapse {
+      border: 0;
+    }
+  }
+
+  .navbar-brand {
+    font-family: Earthbound;
+    font-size: 32px;
+    padding-top: 10px;
+    color: #5C2848 !important;
+
+    .kick {
+      color: $brand-primary !important;
+    }
+  }
+}
+
+nav.navbar {
   border: 0 !important;
   padding-top: 4px;
   padding-bottom: 4px;
   @include grouping;
 
   li {
+    float: none;
     width: 100%;
     border: 0 !important;
     margin-top: 0 !important;
   }
 
-  span.oi {
+  span.oi, span.fa {
     font-size: 24px;
     margin-right: 10px;
     padding: 10px;
@@ -115,6 +153,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.mobile-newsletter {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: lighten($light, 3%);
+}
 
 .newsletter {
   .description {
