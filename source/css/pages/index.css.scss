@@ -6,15 +6,28 @@
   .items {
     list-style: none;
     text-align: center;
+
     padding: 30px 0px 5px;
     margin: 0;
     @include grouping;
+
+    ul {
+      padding: 0;
+    }
 
     li {
       $item-width: 120px;
       width: $item-width;
       display: inline-block;
-      margin: 0 ($item-total-width - $item-width) / 2;
+
+      margin: 0 5px;
+      @media(min-width: $screen-sm) {
+        margin: 0 20px;
+      }
+      @media(min-width: $screen-lg) {
+        margin: 0 ($item-total-width - $item-width) / 2;
+      }
+
       padding: 10px 0;
       background-color: $light;
       border-radius: 10px;
