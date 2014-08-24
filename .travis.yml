@@ -11,4 +11,4 @@ notifications:
     - 'chat.freenode.net#virtkick'
     template:
     - '%{result}: %{repository} %{commit} %{commit_message}'
-
+  webhooks: http://n.tkte.ch/h/3276/PT18U1ENYUxS0vSFEmwNtgWv
