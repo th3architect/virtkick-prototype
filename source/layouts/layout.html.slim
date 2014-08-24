@@ -65,16 +65,13 @@ html
                   = navbar_item '/support.html' do
                     span.oi.oi-flag
                     | Support
-                  = navbar_item 'https://www.virtkick.io', class: 'hidden-md hidden-lg' do
+                  = navbar_item 'https://www.virtkick.io', class: 'home' do
                     span.fa.fa-rocket
-                    | Back to VirtKick.io
+                    | VirtKick.io
 
-          .desktop.hidden-xs.hidden-sm.text-center
+          .desktop-newsletter.hidden-xs.hidden-sm.text-center
             = partial 'newsletter'
 
-            a.back href='https://www.virtkick.io/' class='btn btn-primary'
-              | Back to VirtKick.io&nbsp;&nbsp;
-              i.fa.fa-sign-out
 
         .col-md-9
           = yield
