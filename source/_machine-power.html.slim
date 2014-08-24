@@ -1,49 +1,61 @@
-#page-power.text-center
-  .overview
-    span Memory: 2 GB
-    span Processors: 2
-    span CPU usage: 14%
+#page-power
+  .row.stats
+    .col-sm-3
+      .key Memory:
+      .val.bigger 2 GB
+    .col-sm-3
+      .key Processors:
+      .val
+        | 2 CPU
+      .progress
+        .progress-bar.real role='progressbar' aria-valuenow='42' aria-valuemin='0' aria-valuemax='160' style='width: 42%'
+          span.sr-only 42%
+    .col-sm-3
+      .key Storage:
+      .val 160 GB
+      .progress
+        .progress-bar role='progressbar' aria-valuenow='23' aria-valuemin='0' aria-valuemax='160' style='width: 23%'
+          span.sr-only 23%
+    .col-sm-3
+      .key State:
+      .val.power-state.bigger
+        i.fa.fa-play
+        span Running
 
-  .btn-group
-    a.action.start.btn.btn-default.disabled type='button'
-      i.fa.fa-play
-      | &nbsp; Start
-    a.action.pause.only-on.btn.btn-default type='button'
-      i.fa.fa-pause
-      | &nbsp; Pause
-    a.action.resume.only-on.btn.btn-default type='button'
-      i.fa.fa-forward
-      | &nbsp; Resume
-    a.action.stop.only-on.btn.btn-default type='button'
-      i.fa.fa-stop
-      | &nbsp; Stop
+  .controls
     .btn-group
-      button.only-on.btn.btn-default.dropdown-toggle type='button' data-toggle='dropdown'
-        i.fa.fa-caret-down
-      ul.dropdown-menu
-        li
-          a.action href='#'
-            span.fa.fa-power-off
-            | &nbsp; Hard stop
-    a.action.restart.only-on.btn.btn-default type='button'
-      i.fa.fa-repeat
-      | &nbsp; Restart
-    .btn-group
-      button.only-on.btn.btn-default.dropdown-toggle type='button' data-toggle='dropdown'
-        i.fa.fa-caret-down
-      ul.dropdown-menu
-        li
-          a.action href='#'
-            span.fa.fa-power-off
-            | &nbsp; Hard reset
+      a.action.start.btn.btn-default.disabled type='button'
+        i.fa.fa-play
+        | &nbsp; Start
+      a.action.pause.only-on.btn.btn-default type='button'
+        i.fa.fa-pause
+        | &nbsp; Pause
+      a.action.resume.only-on.btn.btn-default type='button'
+        i.fa.fa-forward
+        | &nbsp; Resume
+      a.action.stop.only-on.btn.btn-default type='button'
+        i.fa.fa-stop
+        | &nbsp; Stop
+      .btn-group
+        button.only-on.btn.btn-default.dropdown-toggle type='button' data-toggle='dropdown'
+          i.fa.fa-caret-down
+        ul.dropdown-menu
+          li
+            a.stop.only-on.action href='#'
+              span.fa.fa-power-off
+              | &nbsp; Hard stop
+      a.action.restart.only-on.btn.btn-default type='button'
+        i.fa.fa-repeat
+        | &nbsp; Restart
+      .btn-group
+        button.only-on.btn.btn-default.dropdown-toggle type='button' data-toggle='dropdown'
+          i.fa.fa-caret-down
+        ul.dropdown-menu
+          li
+            a.restart.only-on.action href='#'
+              span.fa.fa-power-off
+              | &nbsp; Hard reset
 
-  .power-state
-    | State: &nbsp;
-    span running
-
-  .screenshot
-    a href='#console'
-      img.only-on src='/img/machine-screenshot.png'
 
 - content_for :scripts do
   javascript:
@@ -54,13 +66,13 @@
         var state = $('#power').find('.power-state span');
         var action = $(this).text().toLowerCase().trim();
         var actions = {
-          start: ['starting...', 'running'],
-          pause: ['paused', null, 'resume'],
-          resume: ['running', null, 'pause'],
-          stop: ['stopping...', 'stopped'],
-          restart: ['restarting...', 'running'],
-          'hard-stop': ['stopped'],
-          'hard-reset': ['starting...', 'running']
+          start: ['Starting', 'Running'],
+          pause: ['Paused', null, 'resume'],
+          resume: ['Running', null, 'pause'],
+          stop: ['Stopping', 'Stopped'],
+          restart: ['Restarting', 'Running'],
+          'hard stop': ['Stopped'],
+          'hard reset': ['Starting', 'Running']
         };
 
         var changeState = function(newState) {

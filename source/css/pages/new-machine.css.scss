@@ -75,7 +75,7 @@
 
     table {
       margin: 0 auto;
-      background-color: $grouping;
+      background-color: $grouping-bg;
 
       .name {
         width: 60%;
@@ -85,8 +85,8 @@
       }
 
       tr {
-        border-left: solid $active-border-px $grouping;
-        border-right: solid $active-border-px $grouping;
+        border-left: solid $active-border-px $grouping-bg;
+        border-right: solid $active-border-px $grouping-bg;
       }
 
       tbody {
