@@ -4,7 +4,7 @@ $medium-dark: #EC4863;
 $medium: #EC4863;
 $medium-light: #FF733E;
 
-$highlight-bg: #FAF9F3;
+$highlight-bg: #F4F2E9;
 $grouping-bg: #F4F2E9;
 $grouping-active: #F7F0F1;
 $grouping-color: #9E8697;
@@ -25,7 +25,7 @@ $font-size-h2: 26px;
 $font-size-h3: $font-size-base;
 
 $input-border-focus: $medium-dark;
-$table-border-color: #F0DDEB;
+$table-border-color: $border-pink-color;
 
 $brand-info: $grouping-bg;
 $btn-info-color: $text-color;
@@ -46,7 +46,6 @@ $navbar-default-link-hover-color: $medium-dark;
 $navbar-padding-vertical: 7px;
 $navbar-height: 68px;
 
-
 $nav-link-hover-bg: $light;
 $nav-tabs-active-link-hover-color: $brand-primary;
 $nav-tabs-border-color: $medium-dark;
@@ -54,8 +53,10 @@ $nav-tabs-active-link-hover-border-color: $nav-tabs-border-color;
 
 $progress-bg: $highlight-bg;
 .progress {
-  box-shadow: none !important;
-  border: solid 1px $table-border-color;
+  .progress-bar {
+  	@include box-shadow(none);
+  }
+  @include box-shadow(none !important);
   border-radius: 3px !important;
 }
 
@@ -63,6 +64,58 @@ label {
   font-weight: normal !important;
 }
 
+.btn {
+  @include box-shadow(none !important);
+  @include transition(background-color, 0.15s, ease-in);
+  
+  &:hover, &.active {
+    @include transition(background-color, 0.15s, ease-in);
+  }
+  
+  .default {
+  	color: $bright-violet-color;
+  	background-color: $cream-color;
+  }
+
+  &.btn-primary {
+    border: 1px solid $red-color !important; 
+    &:hover {
+      border: darken($red-color, 10%);
+    }
+  }
+
+  &.btn-default {
+    border: 1px solid $cream-color !important; 
+  }
+}
+
+.navbar-default {
+	.navbar-toggle, .navbar-toggle:hover, .navbar-toggle:focus {
+		border: 1px solid $cream-color !important;
+		background-color: transparent !important;
+  	@include transition(background-color, 0.25s, ease-in);
+	  .icon-bar {
+      background-color: $red-color !important;
+    }
+    &:hover {
+      background-color: $red-color !important;
+      @include transition(background-color, 0.25s, ease-in);
+      .icon-bar {
+        background-color: white !important;
+      }
+    }
+  }
+}
+
+/*
+input {
+  @include box-shadow(none !important);
+  border-color: $border-pink-color !important;
+  &:focus, &:active {
+    border-color: $red-color !important;
+  }
+}
+*/
 $icon-font-path: '/font/';
 
 @mixin grouping {

@@ -1,6 +1,9 @@
 @import '../../bootstrap-customize';
 
 #page-machine #power {
+  .btn { 
+    padding: 10px 35px;
+  }
   .stats {
     margin: 0;
     border: solid 1px $table-border-color;
@@ -14,8 +17,7 @@
     }
 
     .val {
-      background-color: #FAF9F3;
-      border: solid 1px $table-border-color;
+      background-color: $grouping-bg;
       border-radius: 4px;
       padding: 8px 0px;
       text-align: center;
@@ -26,11 +28,11 @@
       }
 
       &.power-state {
-        background-color: $brand-secondary;
-        color: #ffffff;
-        font-weight: normal;
+        background-color: $grouping-bg;
+        font-weight: bold;
 
         i {
+          color: $running-color;
           margin-right: 7px;
         }
       }
@@ -46,6 +48,11 @@
   .controls {
     margin-top: 40px;
     text-align: center;
-
+    .btn-group {
+      a.action.start {
+        color: white;
+        background-color: $running-color;
+      }
+    }
   }
 }

@@ -1,8 +1,17 @@
 @import '../bootstrap-customize';
 @import 'machine/*';
 
-.state-running {
-  color: #20A11A;
+.btn-state {
+  margin-top: -3px;
+  margin-left: 20px;
+  padding: 5px 10px;
+  font-size: 11px;
+  border: 1px solid $border-pink-muted-color !important;
+
+  .state-running {
+    padding: 3px;
+    color: $running-color;
+  } 
 }
 
 #page-machine {
@@ -27,14 +36,9 @@
     }
 
     @media(min-width: $screen-md-min) {
-      border: solid 1px $table-border-color;
       border-radius: 4px;
 
       li {
-        & + li {
-          border-left: solid 1px $table-border-color;
-        }
-
         a {
           border-radius: 0px;
         }
