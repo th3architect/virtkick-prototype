@@ -1,4 +1,4 @@
-@import '../bootstrap-customize';
+@import 'bootstrap-customize';
 @import 'machine/*';
 
 .btn-state {
@@ -16,6 +16,7 @@
 
 #page-machine {
   .nav {
+    background-color: $grouping-bg;
     li {
       background-color: $grouping-bg;
 
@@ -36,6 +37,7 @@
     }
 
     @media(min-width: $screen-md-min) {
+      border: 1px solid $cream-color;
       border-radius: 4px;
 
       li {

@@ -1,3 +1,6 @@
+@import 'colors';
+@import 'mixins';
+
 $bg: #ffffff;
 $dark: #5D2749;
 $medium-dark: #EC4863;
@@ -107,15 +110,97 @@ label {
   }
 }
 
-/*
-input {
+input, .form-control input, select, .form-control select {
   @include box-shadow(none !important);
   border-color: $border-pink-color !important;
+
   &:focus, &:active {
     border-color: $red-color !important;
   }
+
+  &:focus, &:active {
+    @include box-shadow(0 0 8px rgba(236,72,99,0.6) !important);
+  }  
 }
-*/
+
+table.table {
+  margin: 0 auto;
+  border: 1px solid $border-pink-color;
+  border-radius: 4px;
+  font-size: 0.9em !important;
+  display: block;
+
+  .btn {
+    font-size: 1em !important;
+  }
+
+  .expand {
+    cursor: pointer;
+    color: white;
+    font-size: 0.5em;
+    border-radius: 2px;
+    padding: 4px;
+    background-color: $red-color;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+
+  thead tr th {
+    border: 0px;
+  }
+
+  tbody {
+    tr {
+      td {
+        color: $bright-violet-color;
+        border: 0px;
+        background-color: transparent !important;
+      }    
+      td, th {
+        vertical-align: middle;
+
+        &.actions {      
+          text-align: right;
+          vertical-align: middle;
+
+          .buttons {
+            opacity: 0;
+            a.btn {
+              color: $muted-violet-color;
+              @include transition(color, 0.1s, ease-in);
+              display: inline-block;
+
+              &:hover, &:focus, &:active {
+                color: darken($muted-violet-color, 10%);
+                @include transition(opacity, 0.1s, ease-in);
+              }
+            }
+          }
+        }
+      }
+    }
+    tr:hover {
+      td.actions .buttons {
+        opacity: 1;
+        @include transition(opacity, 0.2s, ease-in);
+      }
+    }
+  }
+
+  &.table-striped {
+    tbody {
+      tr:nth-child(odd) {
+        td, th {
+          background-color: $muted-cream-color !important;
+        }
+      } 
+    }
+  }
+}
+
 $icon-font-path: '/font/';
 
 @mixin grouping {
