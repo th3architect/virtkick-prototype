@@ -8,10 +8,21 @@
   font-size: 11px;
   border: 1px solid $border-pink-muted-color !important;
 
-  .state-running {
+  .state {
     padding: 3px;
-    color: $running-color;
-  } 
+    &.fa-play {
+      color: $running-color;
+    }
+    &.fa-pause {
+      color: $paused-color;
+    }
+    &.fa-restart {
+      color: $restart-color;
+    }
+    &.fa-stop {
+      color: $stopped-color;
+    }
+  }
 }
 
 #page-machine {

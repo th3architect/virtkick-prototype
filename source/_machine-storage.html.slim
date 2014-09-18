@@ -49,10 +49,6 @@
 - content_for :scripts do
   javascript:
     $(function() {
-      $('a.expand').click(function() {
-        $(this).closest('tr').nextAll('tr.snapshot').slice(0, 4).toggleClass('hidden');
-      });
-
       $('#page-storage .create-button').click(function() {
         $('#page-storage .create-button').fadeOut(200, function () {
           $('#page-storage .new').fadeIn(200);
