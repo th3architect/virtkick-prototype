@@ -21,7 +21,6 @@
       border-radius: 4px;
       padding: 8px 0px;
       text-align: center;
-      font-weight: bold;
 
       &.bigger {
         padding: 17px 0px;
@@ -29,7 +28,6 @@
 
       &.power-state {
         background-color: $grouping-bg;
-        font-weight: bold;
 
         i {
           color: $running-color;

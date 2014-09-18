@@ -11,3 +11,8 @@
     -o-transition: $property $time $method;
     transition: $property $time $method;
 }
+
+@mixin grouping {
+  background-color: $grouping-bg;
+  border-radius: 4px;
+}

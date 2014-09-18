@@ -75,35 +75,24 @@
 
     table {
       margin: 0 auto;
-      background-color: $grouping-bg;
 
       .name {
         width: 60%;
       }
-      .storage, .date {
-        text-align: right;
-      }
-
-      tr {
-        border-left: solid $active-border-px $grouping-bg;
-        border-right: solid $active-border-px $grouping-bg;
-      }
 
       tbody {
-        tr:hover {
-          border-left: solid $active-border-px $brand-primary;
-
-          td {
-            cursor: pointer;
-            background-color: $grouping-active;
-          }
+        tr td {
+          @include transition(border, 0.15s, ease-in);
+          border-left: solid $active-border-px transparent !important; 
         }
-
-        tr.selected {
-          border-left: solid $active-border-px $brand-primary;
-
+        tr:hover, tr.selected  {
+          td:first-child {
+            @include transition(border, 0.15s, ease-in);
+            border-left: solid $active-border-px $brand-primary !important; 
+          }
           td {
-            background-color: $grouping-active;
+            border-radius: 0px;
+            cursor: pointer;
           }
         }
       }

@@ -55,6 +55,24 @@ $nav-tabs-border-color: $medium-dark;
 $nav-tabs-active-link-hover-border-color: $nav-tabs-border-color;
 
 $progress-bg: $highlight-bg;
+
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-tablet:              $screen-sm-min !default;
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+$screen-desktop:             $screen-md-min !default;
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-lg-desktop:          $screen-lg-min !default;
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
 .progress {
   .progress-bar {
   	@include box-shadow(none);
@@ -110,9 +128,11 @@ label {
   }
 }
 
-input, .form-control input, select, .form-control select {
+input, .form-control input, select, .form-control select, .input-group input {
   @include box-shadow(none !important);
   border-color: $border-pink-color !important;
+  border-style: solid !important;
+  border-width: 1px;
 
   &:focus, &:active {
     border-color: $red-color !important;
@@ -123,12 +143,34 @@ input, .form-control input, select, .form-control select {
   }  
 }
 
+.input-group {
+  input {
+    padding: 6px 12px !important;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+
+    &:focus {
+      outline-color: transparent;
+    }
+  }
+
+  .input-group-addon.dropdown-toggle {
+    background-color: $red-color !important;
+    border-color: $red-color !important;
+    cursor: pointer;
+
+    span {
+      color: white;
+    }
+  }
+}
+
 table.table {
   margin: 0 auto;
   border: 1px solid $border-pink-color;
   border-radius: 4px;
+  border-collapse: initial;
   font-size: 0.9em !important;
-  display: block;
 
   .btn {
     font-size: 1em !important;
@@ -150,6 +192,14 @@ table.table {
 
   thead tr th {
     border: 0px;
+    border-radius: 4px;
+
+    &:first-child {
+      padding-left: 20px;
+    }
+    &:last-child {
+      padding-right: 20px;
+    }
   }
 
   tbody {
@@ -158,17 +208,31 @@ table.table {
         color: $bright-violet-color;
         border: 0px;
         background-color: transparent !important;
+        padding-top: 12px;
+        padding-bottom: 12px;
+
+        &:first-child {
+          padding-left: 20px;
+        }
+        &:last-child {
+          padding-right: 20px;
+        }
       }    
       td, th {
+        border-radius: 4px;
         vertical-align: middle;
 
         &.actions {      
           text-align: right;
           vertical-align: middle;
+          font-size: 0.9em;
 
           .buttons {
             opacity: 0;
+
             a.btn {
+              margin: 0px;
+              padding: 6px;
               color: $muted-violet-color;
               @include transition(color, 0.1s, ease-in);
               display: inline-block;
@@ -176,6 +240,19 @@ table.table {
               &:hover, &:focus, &:active {
                 color: darken($muted-violet-color, 10%);
                 @include transition(opacity, 0.1s, ease-in);
+              }
+
+              span.action {
+                margin-left: 5px;
+              }
+            }                        
+            @media(max-width: $screen-sm-max) {
+              span.oi, span.fa {
+                margin-right: 15px;
+                font-size: 18px !important;
+              }
+              span.action {
+                display: none;
               }
             }
           }
@@ -201,11 +278,15 @@ table.table {
   }
 }
 
-$icon-font-path: '/font/';
-
-@mixin grouping {
-  background-color: $grouping-bg;
-  border-radius: 4px;
+.dropdown-menu {
+  padding: 0px !important;
+  border: 1px solid $border-pink-color !important;
 }
+
+.container.main {
+  padding-bottom: 10px;
+}
+
+$icon-font-path: '/font/';
 
 @import 'bootstrap/_variables';

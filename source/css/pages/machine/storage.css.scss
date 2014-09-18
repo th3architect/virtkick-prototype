@@ -9,7 +9,7 @@
     .btn {
       padding: 15px 35px;
 
-      &.save-button, &.cancel-button {
+      &.save-button {
         margin-left: 10px;
       }
     }
@@ -53,32 +53,20 @@
 
   table { 
     th.name {
+      width: 38%;
+    }
+
+    th.actions {
       width: 40%;
     }
 
     th.type {
-      width: 9%;
+      width: 10%;
     }
 
     th.size {
-      width: 9%;
+      width: 12%;
     }
-
-    td.actions {
-      width: 35%;
-    }
-
-    td.space {
-      width: 20%;
-    }
-
-    tr.snapshot {
-      td.name {
-        padding-left: 50px;
-      }
-
-    }
-
 
   }
 }
