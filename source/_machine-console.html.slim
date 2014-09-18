@@ -1,29 +1,12 @@
 #page-console.text-center
-  div.console-window
+  div
     canvas
-    div.overlay
-      div.bg
-      div.actions
-        div.buttons
-          a.btn.btn-default.ctrlaltdel
-            i.fa-refresh.fa
-            |  Send Ctrl+Alt+Del
-          a.btn.btn-default.hardreset
-            i.fa-power-off.fa
-            |  Hard reset
-          a.btn.btn-default.mountiso
-            i.fa-bolt.fa
-            |  Mount ISO as CD-ROM
-        div.distributions
-          | Choose Linux distribution: &nbsp;
-          select
-            - for distro in ['Arch Linux', 'Ubuntu Server', 'Fedora', 'FreeBSD', 'OpenNebula', 'SmartOS', 'ReactOS']
-              option = distro
-          a.btn.btn-primary Mount!
-         
-    div.btn.btn-default.rocket-menu
-      img src='/img/logo/virtkick-logo-pixelart-gray-24.png'
-  p.bright-violet
+  p
+    | VM stuck? Sometimes this may help. &nbsp;
+    button.ctrlaltdel
+      i.fa-refresh.fa
+      |  Send Ctrl+Alt+Del
+  p
     | If the VNC console doesn't appear, please upgrade your browser or trying a different one.
 
   = javascript_include_tag '/js/novnc.js'
@@ -40,16 +23,6 @@
           'local_cursor': true,
           'shared': true,
           'updateState': function() {},
-          'onUpdateState': function(rfb, state, oldstate, statusMsg) {
-            var console = $('.console-window');
-            var width = console.outerWidth() - 50;
-            var height = (console.outerWidth() - 50) * 0.75;
-            rfb.get_display().resize(width, height);
-
-            var overlay = console.find(".overlay");
-            overlay.width(width);
-            overlay.height(height);
-          },
           'view_only': false,
           'onPasswordRequired': function() {
             console.log('VNC: Password required');
@@ -69,15 +42,5 @@
         $('.nav-tabs a').click(function() {
           rfb.disconnect();
         });
-
-      });
-
-      $(".rocket-menu").click(function () {
-        $(this).toggleClass("active");
-        $(".console-window .overlay").fadeToggle(200);
-      });
-
-      $(".mountiso").click(function () {
-        $(".distributions").fadeToggle(200);
       });
     });
