@@ -1,61 +1,72 @@
+@import '../../bootstrap-customize';
+
 #page-machine #storage {
   text-align: left;
 
   .create {
-    margin-bottom: 30px;
-  }
+    margin-bottom: 20px;
 
-  table {
-    margin: 0 auto;
+    .btn {
+      padding: 15px 35px;
 
-    td, th {
-      vertical-align: middle;
+      &.save-button {
+        margin-left: 10px;
+      }
     }
 
+    .new {
+      text-align: right;
+      display: none;
+
+      .name, .type, .size {
+        display: inline-block;
+        margin-right: 20px; 
+        
+        &.name {
+          input {
+            display: inline-block;
+            width: 75%;
+          }
+        }
+
+        &.type {
+          select {
+            display: inline-block;
+            &.size {
+              width: 60px;
+            }
+          }
+        }
+
+        &.size {
+          margin-right: 5px; 
+          select {
+            display: inline-block;
+            &.size {
+              width: 90px;
+            }
+          }
+        }
+      }
+    }    
+  }
+
+  table { 
     th.name {
-      width: 45%;
+      width: 38%;
+    }
+
+    th.actions {
+      width: 40%;
     }
 
     th.type {
       width: 10%;
     }
 
-    td.actions {
-      text-align: right;
-
-      a.btn {
-        display: inline-block;
-        margin-left: 3px;
-        margin-right: 3px;
-      }
+    th.size {
+      width: 12%;
     }
 
-    tr.snapshot {
-      td.name {
-        padding-left: 30px;
-      }
-
-      * {
-        font-size: 14px !important;
-      }
-    }
-
-    .form-control {
-      height: 30px;
-    }
-
-    input {
-      display: inline-block;
-      width: 75%;
-    }
-
-    select {
-      display: inline-block;
-      padding: 0;
-
-      &.size {
-        width: 60px;
-      }
-    }
   }
 }
