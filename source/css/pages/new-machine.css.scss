@@ -24,7 +24,7 @@
       input[type='radio'], input[type='checkbox'] {
         position: absolute;
         z-index: -1;
-        @include opacity(0);
+        opacity: 0;
       }
 
       &.btn-info.active, &.btn-info:hover {
