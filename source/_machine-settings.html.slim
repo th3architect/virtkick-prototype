@@ -22,16 +22,17 @@
     | CD image
 
   div.border-group
-    label
-      input type='checkbox' checked='checked'
-      |  mount ISO as CD-ROM &nbsp;
-      select
-        - for distro in ['Arch Linux', 'Ubuntu Server', 'Fedora', 'FreeBSD', 'OpenNebula', 'SmartOS', 'ReactOS']
-          option = distro
+    input type='checkbox' checked='checked'
+    |  mount ISO as CD-ROM &nbsp;
+    select.form-control
+      - for distro in ['Arch Linux', 'Ubuntu Server', 'Fedora', 'FreeBSD', 'OpenNebula', 'SmartOS', 'ReactOS']
+        option = distro
 
   h3 
     span.fa.fa-users
     | Users
+
+  p.bright-violet.users-notice These users are able to manage this machine as well:
 
   table.table.table-striped.text-left.users
     tbody
@@ -41,15 +42,19 @@
             = " #{user} <i>(#{user.downcase}@mailinator.com)</i>"
           td.actions
             div.buttons
-              a.btn
+              a.btn.delete-user
                 span.oi.oi-delete
                 span.action Delete
 
-  p.bright-violet.users-notice The above users are able to manage this machine as well.
-  
   .create.text-right
     a.btn.btn-primary.create-button
       | Create a new user
+    div.new
+      div.name
+        input.form-control(placeholder=("Username".html_safe))
+      div.email
+        input.form-control(placeholder=("E-mail".html_safe))
+      a.btn.btn-primary.save-button Create
 
   div.danger-zone
     h3.danger
@@ -71,7 +76,20 @@
 - content_for :scripts do
   javascript:
     $(function() {
-      $('#page-settings a.user').click(function() {
-        $(this).closest('li').remove();
+      $('#page-settings a.delete-user').click(function() {
+        $(this).closest('tr').remove();
       });
+
+      $('#page-settings .create-button').click(function() {
+        $('#page-settings .create-button').fadeOut(200, function () {
+          $('#page-settings .new').fadeIn(200);
+        });
+      });
+
+      $('#page-settings .save-button').click(function() {
+        $('#page-settings .new').fadeOut(200, function () {
+          $('#page-settings .create-button').fadeIn(200);
+        });
+      });
+      
     });

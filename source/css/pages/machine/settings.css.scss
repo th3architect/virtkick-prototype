@@ -14,12 +14,41 @@
         margin-left: 10px;
       }
     }
+
+    .new {
+      text-align: right;
+      display: none;
+
+      .name, .email {
+        display: inline-block;
+        margin-right: 20px; 
+        
+        &.name {
+          input {
+            display: inline-block;
+            width: 100%;
+          }
+        }
+
+        &.email {
+          input {
+            display: inline-block;
+            width: 100%;
+          }
+        }
+      }
+    }    
   }
 
   .users-notice {
-    margin-top: 15px;
-    padding-left: 20px;
+    text-align: center;
     font-size: 0.95em !important;
+  }
+
+  select.form-control {
+    max-width: 200px;
+    margin-left: 10px;
+    display: inline-block;
   }
 
   .fa {
@@ -28,7 +57,7 @@
   }
 
   table.users {
-    margin: 20px 0px 0px 0px;
+    margin: 20px 0px 20px 0px;
 
     td.actions {
       text-align: left;
