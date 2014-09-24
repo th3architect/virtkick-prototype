@@ -33,8 +33,6 @@
     span.fa.fa-users
     | Users
 
-  p These users are able to manage this machine as well:
-
   table.table.table-striped.text-left.users
     tbody
       - for user in %w(kwiat Rush m13 johndoe)
@@ -46,6 +44,12 @@
               a.btn
                 span.oi.oi-delete
                 span.action Delete
+
+  p.bright-violet.users-notice The above users are able to manage this machine as well.
+  
+  .create.text-right
+    a.btn.btn-primary.create-button
+      | Create a new user
 
   div.danger-zone
     h3.danger

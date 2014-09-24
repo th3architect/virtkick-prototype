@@ -3,6 +3,25 @@
 #page-settings {
   padding-bottom: 50px;
 
+  .create {
+    margin-bottom: 20px;
+
+    .btn {
+      padding: 15px 35px;
+      width: 210px;
+
+      &.save-button {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .users-notice {
+    margin-top: 15px;
+    padding-left: 20px;
+    font-size: 0.95em !important;
+  }
+
   .fa {
     color: $red-color;
     margin-right: 10px;
@@ -10,7 +29,10 @@
 
   table.users {
     margin: 20px 0px 0px 0px;
-    max-width: 500px;
+
+    td.actions {
+      text-align: left;
+    }
   }
 
   .danger-zone {
