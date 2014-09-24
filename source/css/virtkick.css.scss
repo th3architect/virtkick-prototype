@@ -49,16 +49,16 @@
   }
 
   .content {
-    border-top: 7px solid lighten($red-color, 5%);
-    border-left: 1px solid lighten($red-color, 20%);
-    border-right: 1px solid lighten($red-color, 20%);
-    border-bottom: 1px solid lighten($red-color, 20%);
+    border-top: 1px solid lighten($red-color, 15%);
+    border-left: 1px solid lighten($red-color, 15%);
+    border-right: 1px solid lighten($red-color, 15%);
+    border-bottom: 1px solid lighten($red-color, 15%);
     border-radius: 4px;
     padding: 20px;
     margin-top: 20px;
     
     .notice {
-      color: $bright-violet-color;
+      color: $red-color;
       font-size: 0.95em !important;
     } 
   }
