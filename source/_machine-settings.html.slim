@@ -34,6 +34,16 @@
 
   p.bright-violet.users-notice These users are able to manage this machine as well:
 
+  .create.text-right
+    a.btn.btn-primary.create-button
+      | Create a new user
+    div.new
+      div.name
+        input.form-control(placeholder=("Username".html_safe))
+      div.email
+        input.form-control(placeholder=("E-mail".html_safe))
+      a.btn.btn-primary.save-button Create
+
   table.table.table-striped.text-left.users
     tbody
       - for user in %w(kwiat Rush m13 johndoe)
@@ -46,24 +56,12 @@
                 span.oi.oi-delete
                 span.action Delete
 
-  .create.text-right
-    a.btn.btn-primary.create-button
-      | Create a new user
-    div.new
-      div.name
-        input.form-control(placeholder=("Username".html_safe))
-      div.email
-        input.form-control(placeholder=("E-mail".html_safe))
-      a.btn.btn-primary.save-button Create
-
   div.danger-zone
     h3.danger
       span.fa.fa-exclamation-triangle
       | Danger Zone
     
     .content
-      p.notice
-        | Please use with caution - these operations can not be undone!
       p
         button.btn.btn-primary
           | Transfer ownership
