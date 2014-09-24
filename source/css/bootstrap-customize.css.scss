@@ -278,6 +278,24 @@ table.table {
   }
 }
 
+input[type='checkbox'] {
+    opacity: 0;
+    float: left;
+    width: 5px;
+}
+
+input[type='checkbox'] + label {
+    margin: 0;
+    clear: none;
+    padding: 5px 0 4px 24px;
+    cursor: pointer;
+    background: url('../img/ui/tick-bg.png') left center no-repeat;
+}
+
+input[type='checkbox']:checked + label {
+    background-image: url('../img/ui/tick.png'), url('../img/ui/tick-bg.png');
+}
+
 .dropdown-menu {
   padding: 0px !important;
   border: 1px solid $border-pink-color !important;

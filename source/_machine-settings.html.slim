@@ -4,26 +4,26 @@
     | Networks
 
   div.border-group
-    label
-      input type='checkbox' checked='checked'
+    input id="global-network" type='checkbox' checked='checked'
+    label for="global-network"
       |  global network
     br
-    label
-      input type='checkbox' checked='checked'
+    input id="ipv6-global-network" type='checkbox' checked='checked'
+    label for="ipv6-global-network"
       |  IPv6 for global network
     br
-    label
-      input type='checkbox'
+    input id="private-network" type='checkbox'
+    label for="private-network"
       |  private network between your VMs
-
 
   h3 
     span.fa.fa-bolt
     | CD image
 
   div.border-group
-    input type='checkbox' checked='checked'
-    |  mount ISO as CD-ROM &nbsp;
+    input id="mount-iso" type='checkbox' checked='checked'
+    label for="mount-iso"
+      | mount ISO as CD-ROM &nbsp;
     select.form-control
       - for distro in ['Arch Linux', 'Ubuntu Server', 'Fedora', 'FreeBSD', 'OpenNebula', 'SmartOS', 'ReactOS']
         option = distro
