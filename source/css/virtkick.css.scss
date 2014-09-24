@@ -27,6 +27,53 @@
   }
 }
 
+.border-group {
+  margin: 0 auto;
+  border: 1px solid $border-pink-color;
+  border-radius: 2px;
+  padding: 20px;
+
+  font-size: 95%;
+  font-size: 0.9em !important;
+}
+
+h1, h2, h3 {
+  &.danger {
+    color: $red-color !important;
+  }
+}
+
+.danger-zone {
+  margin: 30px auto 30px auto;
+  padding: 0px;
+  border-radius: 4px;
+
+  h3 {
+    margin: 0px;
+    padding: 10px 0px 10px 10px;
+    background-color: lighten($red-color, 7%);
+    color: white !important;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    .fa, .oi {
+      color: white !important;
+    }
+  }
+
+  .content {
+    border-left: 1px solid lighten($red-color, 30%);
+    border-right: 1px solid lighten($red-color, 30%);
+    border-bottom: 1px solid lighten($red-color, 30%);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 20px;
+    .notice {
+      color: $bright-violet-color;
+      font-size: 0.95em !important;
+    } 
+  }
+}
 
 .header.row {
   margin-top: 30px;
