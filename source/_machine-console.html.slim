@@ -32,6 +32,11 @@
   javascript:
     $(function() {
       $('.console').click(function() {
+        var console = $('.console-window');
+        var container = $('.main.container');
+        
+        console.width(container.innerWidth() - 204);
+        
         var rfb = new RFB({
           'target': $('canvas')[0],
           'repeaterID': '',
@@ -41,7 +46,6 @@
           'shared': true,
           'updateState': function() {},
           'onUpdateState': function(rfb, state, oldstate, statusMsg) {
-            var console = $('.console-window');
             var width = console.outerWidth() - 50;
             var height = (console.outerWidth() - 50) * 0.75;
             rfb.get_display().resize(width, height);
@@ -71,11 +75,13 @@
         });
       
         $('.navbar.side-menu').addClass("collapsed");
+        $(".desktop-newsletter").fadeOut(200);
       });
 
       $('#page-machine .nav li').click(function (e) {          
         if ($(e.currentTarget).find(".console").length == 0) {
           $('.navbar.side-menu').removeClass("collapsed");
+            $(".desktop-newsletter").fadeIn(200);
         }
       });
       
