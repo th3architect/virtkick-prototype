@@ -36,7 +36,7 @@ html
 
       .row
         .col-md-3
-          nav.navbar.navbar-default role="navigation"
+          nav.navbar.navbar-default.side-menu role="navigation"
             .container
               .navbar-header.hidden-md.hidden-lg
                 button.navbar-toggle data-target="#navbar-collapsable" data-toggle="collapse" type="button"
@@ -52,22 +52,22 @@ html
                 ul.nav.navbar-nav
                   = navbar_item '/' do
                     span.oi.oi-monitor
-                    | Machines
+                    span.menu-item Machines
                   = navbar_item '/images.html' do
                     span.oi.oi-aperture
-                    | Images
+                    span.menu-item Images
                   = navbar_item '/addons.html' do
                     span.oi.oi-beaker
-                    | Add-ons
+                    span.menu-item Add-ons
                   = navbar_item '/billing.html' do
                     span.oi.oi-credit-card
-                    | Billing
+                    span.menu-item Billing
                   = navbar_item '/support.html' do
                     span.oi.oi-flag
-                    | Support
+                    span.menu-item Support
                   = navbar_item 'https://www.virtkick.io', class: 'home' do
                     span.fa.fa-rocket
-                    | VirtKick.io
+                    span.menu-item VirtKick.io
 
           .desktop-newsletter.hidden-xs.hidden-sm.text-center
             = partial 'newsletter'

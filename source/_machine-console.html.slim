@@ -69,9 +69,16 @@
         $('.nav-tabs a').click(function() {
           rfb.disconnect();
         });
-
+      
+        $('.navbar.side-menu').addClass("collapsed");
       });
 
+      $('#page-machine .nav li').click(function (e) {          
+        if ($(e.currentTarget).find(".console").length == 0) {
+          $('.navbar.side-menu').removeClass("collapsed");
+        }
+      });
+      
       $(".rocket-menu").click(function () {
         $(this).toggleClass("active");
         $(".console-window .overlay").fadeToggle(200);

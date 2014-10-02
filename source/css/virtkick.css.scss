@@ -196,6 +196,46 @@ h3 {
   }
 }
 
+.navbar.side-menu {
+  width: 100%;
+  @include transition(width, 0.35s, ease-in);
+  
+  .container {
+    @include transition(padding, 0.25s, linear);
+    .navbar-collapse 
+    {
+      @include transition(padding, 0.25s, linear);
+    }
+  }
+
+  &.collapsed {
+    width: 96px !important;
+    @include transition(width, 0.4s, ease-in);
+
+    .container {
+      @include transition(padding, 0.25s, linear);
+      padding-left: 0;
+      padding-right: 0;
+      .navbar-collapse 
+      {
+        @include transition(padding, 0.25s, linear);
+        padding-left: 0;
+        padding-right: 0;
+        li a {
+          width: 96px;
+          text-align: center;
+          span {
+            margin-right: 0;
+            &.menu-item {
+              display: none;
+            } 
+          }
+        }
+      }
+    }
+  }
+}
+
 #old-browser {
   text-align: center;
   z-index: 1001;
