@@ -9,18 +9,26 @@
     &:first-child {
       margin-top: 0px;
     }
+
+    &.users-header {
+      display: inline-block;
+    }
+  }
+
+  p.users-notice {
+    margin-top: 10px;
+    margin-bottom: 0px;
   }
 
   .create {
-    margin-bottom: 20px;
+    margin-top: 25px;
+    float: right;
 
     .btn {
+      margin-bottom: 0px;
+      margin-left: 20px;
       padding: 15px 35px;
       width: 210px;
-
-      &.save-button {
-        margin-left: 10px;
-      }
     }
 
     .new {
@@ -29,7 +37,8 @@
 
       .name, .email {
         display: inline-block;
-        margin-right: 20px; 
+        margin-left: 20px; 
+        margin-right: 0px; 
         
         &.name {
           input {
@@ -48,9 +57,47 @@
     }    
   }
 
-  .users-notice {
-    text-align: center;
-    font-size: 0.95em !important;
+  @media(max-width: $screen-md-max) { 
+    .users-header {
+      margin-bottom: 0px;
+    } 
+    .create {
+      margin-top: 10px;
+      float: none;
+
+      .btn {
+        float: none;
+        display: inline-block;
+        margin-bottom: 0px;
+      }
+
+      .new {
+        .name, .email {
+          margin-bottom: 10px;
+        }
+      }
+
+      p.users-notice {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  @media(max-width: $screen-sm-max) {
+    .create {
+      text-align: right;
+      .btn {
+        float: right;
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      .new {
+        .name, .email {
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
 
   select.form-control {
@@ -65,7 +112,7 @@
   }
 
   table.users {
-    margin: 20px 0px 20px 0px;
+    margin: 10px 0px 20px 0px;
 
     td.actions {
       text-align: left;

@@ -28,11 +28,9 @@
       - for distro in ['Arch Linux', 'Ubuntu Server', 'Fedora', 'FreeBSD', 'OpenNebula', 'SmartOS', 'ReactOS']
         option = distro
 
-  h3 
+  h3.users-header
     span.fa.fa-users
     | Users
-
-  p.bright-violet.users-notice These users are able to manage this machine as well:
 
   .create.text-right
     a.btn.btn-primary.create-button
@@ -43,6 +41,8 @@
       div.email
         input.form-control(placeholder=("E-mail".html_safe))
       a.btn.btn-primary.save-button Create
+
+  p.users-notice These users are able to manage this machine as well:
 
   table.table.table-striped.text-left.users
     tbody
