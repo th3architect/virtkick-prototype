@@ -15,4 +15,6 @@ configure :build do
   activate :asset_hash
 end
 
-ignore 'img/distros/LICENSE.md' # https://github.com/middleman/middleman/issues/1300
+# https://github.com/middleman/middleman/issues/1300
+ignore 'img/distros/LICENSE.md'
+ignore 'img/addons/LICENSE.md'
