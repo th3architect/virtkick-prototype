@@ -225,9 +225,11 @@ table.table {
         &.actions {      
           text-align: right;
           vertical-align: middle;
-          font-size: 0.9em;
 
           .buttons {
+            margin-left: 10px;
+            display: inline-block;
+            font-size: 0.9em;
             opacity: 0;
 
             a.btn {

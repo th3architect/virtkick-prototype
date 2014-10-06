@@ -35,18 +35,11 @@
       text-align: right;
       display: none;
 
-      .name, .email {
+      .email {
         display: inline-block;
         margin-left: 20px; 
         margin-right: 0px; 
         
-        &.name {
-          input {
-            display: inline-block;
-            width: 100%;
-          }
-        }
-
         &.email {
           input {
             display: inline-block;
@@ -72,7 +65,7 @@
       }
 
       .new {
-        .name, .email {
+        .email {
           margin-bottom: 10px;
         }
       }
@@ -93,7 +86,7 @@
       }
 
       .new {
-        .name, .email {
+        .email {
           margin-bottom: 10px;
         }
       }

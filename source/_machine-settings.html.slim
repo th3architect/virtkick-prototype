@@ -36,8 +36,6 @@
     a.btn.btn-primary.create-button
       | Create a new user
     div.new
-      div.name
-        input.form-control(placeholder=("Username".html_safe))
       div.email
         input.form-control(placeholder=("E-mail".html_safe))
       a.btn.btn-primary.save-button Create
@@ -48,9 +46,8 @@
     tbody
       - for user in %w(kwiat Rush m13 johndoe)
         tr
-          td.user
-            = " #{user} <i>(#{user.downcase}@mailinator.com)</i>"
-          td.actions
+          td.user.actions
+            = "#{user.downcase}@mailinator.com"
             div.buttons
               a.btn.delete-user
                 span.oi.oi-delete
