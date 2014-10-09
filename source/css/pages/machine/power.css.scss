@@ -3,6 +3,9 @@
 #page-machine #power {
   .btn { 
     padding: 10px 35px;
+    &.dropdown-toggle {
+      padding: 10px 15px;
+    }
   }
   .stats {
     margin: 0;

@@ -74,23 +74,17 @@
           rfb.disconnect();
         });
       
-        $('.navbar.side-menu').addClass("collapsed");
-        $(".desktop-newsletter").fadeOut(200);
+        $('.side-menu-wrapper').addClass("collapsed");
       });
 
       $('#page-machine .nav li').click(function (e) {          
         if ($(e.currentTarget).find(".console").length == 0) {
-          $('.navbar.side-menu').removeClass("collapsed");
-            $(".desktop-newsletter").fadeIn(200);
+          $('.side-menu-wrapper').removeClass("collapsed");
+          $(".side-menu").removeClass("expanded");
         }
       });
-      
-      $(".rocket-menu").click(function () {
-        $(this).toggleClass("active");
-        $(".console-window .overlay").fadeToggle(200);
-      });
 
-      $(".mountiso").click(function () {
-        $(".distributions").fadeToggle(200);
+      $('.side-menu-wrapper .dropdown').click (function () {
+        $(".side-menu").toggleClass("expanded");
       });
     });
