@@ -82,12 +82,12 @@
 
       tbody {
         tr td {
-          @include transition(border, 0.15s, ease-in);
+          @include transition(border, 0.15s, ease-in, 0s);
           border-left: solid $active-border-px transparent !important; 
         }
         tr:hover, tr.selected  {
           td:first-child {
-            @include transition(border, 0.15s, ease-in);
+            @include transition(border, 0.15s, ease-in, 0s);
             border-left: solid $active-border-px $brand-primary !important; 
           }
           td {
