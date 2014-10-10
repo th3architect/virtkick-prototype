@@ -35,40 +35,42 @@ html
 
 
       .row
-        .col-md-3
-          nav.navbar.navbar-default role="navigation"
-            .container
-              .navbar-header.hidden-md.hidden-lg
-                button.navbar-toggle data-target="#navbar-collapsable" data-toggle="collapse" type="button"
-                  span.sr-only Toggle navigation
-                  span.icon-bar
-                  span.icon-bar
-                  span.icon-bar
-                a.navbar-brand href='/'
-                  img src='/img/logo/virtkick-logo-pixelart-48.png' class='pix'
-                  |  virt
-                  span.kick kick
-              #navbar-collapsable.collapse.navbar-collapse
-                ul.nav.navbar-nav
-                  = navbar_item '/' do
-                    span.oi.oi-monitor
-                    | Machines
-                  = navbar_item '/images.html' do
-                    span.oi.oi-aperture
-                    | Images
-                  = navbar_item '/addons.html' do
-                    span.oi.oi-beaker
-                    | Add-ons
-                  = navbar_item '/billing.html' do
-                    span.oi.oi-credit-card
-                    | Billing
-                  = navbar_item '/support.html' do
-                    span.oi.oi-flag
-                    | Support
-                  = navbar_item 'https://www.virtkick.io', class: 'home' do
-                    span.fa.fa-rocket
-                    | VirtKick.io
-
+        .col-md-3.side-menu-wrapper
+          nav.navbar.navbar-default.side-menu role="navigation"
+            .navbar-header.hidden-md.hidden-lg
+              button.navbar-toggle data-target="#navbar-collapsable" data-toggle="collapse" type="button"
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              a.navbar-brand href='/'
+                img src='/img/logo/virtkick-logo-pixelart-48.png' class='pix'
+                |  virt
+                span.kick kick
+            #navbar-collapsable.collapse.navbar-collapse
+              ul.nav.navbar-nav
+                = navbar_item '/' do
+                  span.oi.oi-monitor
+                  span.menu-item Machines
+                = navbar_item '/images.html' do
+                  span.oi.oi-aperture
+                  span.menu-item Images
+                = navbar_item '/addons.html' do
+                  span.oi.oi-beaker
+                  span.menu-item Add-ons
+                = navbar_item '/billing.html' do
+                  span.oi.oi-credit-card
+                  span.menu-item Billing
+                = navbar_item '/support.html' do
+                  span.oi.oi-flag
+                  span.menu-item Support
+                = navbar_item 'https://www.virtkick.io', class: 'home' do
+                  span.fa.fa-rocket
+                  span.menu-item VirtKick.io
+          .dropdown
+            button.btn.btn-primary
+              span.caret
+              
           .desktop-newsletter.hidden-xs.hidden-sm.text-center
             = partial 'newsletter'
 
