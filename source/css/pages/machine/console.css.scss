@@ -1,82 +1,65 @@
 @import '../../bootstrap-customize';
 
-#page-machine {
-  #console {
-    position: absolute;
-    top: 70px;
-    left: -152px;
-    margin-bottom: 30px;
 
+#page-machine {
+  .console-window-wrapper {
+    position: absolute;
+    box-sizing: border-box;
+    
     .console-window {
-      position: relative;
-      padding: 25px 25px 12px 25px;
+      position: absolute;
+      box-sizing: border-box;
+      padding: 35px 35px 15px 35px;
+      margin-bottom: 30px;
       border-radius: 4px;
       background-color: $cream-color;
-      
-      canvas {
+
+      .canvas-wrapper {
+        box-sizing: border-box;
         background-color: black;
         border-radius: 4px;
-        margin-bottom: 5px;
-      }
-
-      .overlay {
-        position: absolute; 
-        border-radius: 4px;
-        top: 25px;
-        left: 25px;
-        display: none;
-
-        .bg {
-          position: relative;
-          border-radius: 4px;
-          width: 100%;
-          height: 100%;
-          opacity: 0.85;
-          background-color: $cream-color;
-          @include box-shadow(inset 0px 0px 60px 20px rgba(100, 100, 100, 0.05));
-        }
-
-        .actions {
-          text-align: left !important;
-          position: absolute;
-          left : 10%;
-          top : 10%;
-          .buttons {
-            width: 250px;
-            .ctrlaltdel, .hardreset, .mountiso {
-              padding: 10px 20px;
-              border:  0px solid $cream-color !important;
-              text-align: left;
-              display: block;
-              margin-top: 10px;
-              i {
-                margin-right: 10px;
-              }
-            }
-          }
-
-          .distributions {
-            display: none;
-            margin-top: 10px;
-            padding-left: 20px;
-            .btn {
-              margin-left: 20px;
-              border:  0px solid $red-color !important;
-            }
-          }
+        
+        canvas {
+          width: 640px;
+          height: 480px;
         }
       }
 
-      .btn.rocket-menu {
-        border: 1px solid $border-pink-color !important; 
-        &:hover, &:focus, &:active, &.active {
-          background-color: $red-color;
+      .vm-actions {
+        width: 100%;
+        text-align: center;
+
+        .distributions {
+          margin-top: 5px;
+          float: left;
+          width: auto;
+          background-color: transparent;
+          color: $bright-violet-color
+        }
+
+        .rocket-menu {
+          margin-top: 10px;
+          display: inline-block;
+        }
+
+        .restart {
+          float: right;
+
+          .ctrlaltdel, .hardreset{
+            padding: 10px 10px;
+            border:  1px solid $cream-color !important;
+            text-align: left;
+            margin-top: 0px;
+            i {
+              margin-right: 10px;
+            }
+          }
         }
       }
     }
 
     p.bright-violet {
-      margin-top: 10px;
+      margin-top: 20px;
     }
   }
 }

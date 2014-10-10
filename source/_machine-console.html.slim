@@ -1,30 +1,21 @@
 #page-console.text-center
-  div.console-window
-    canvas
-    div.overlay
-      div.bg
-      div.actions
-        div.buttons
+  .console-window-wrapper
+    .console-window
+      .canvas-wrapper
+        canvas
+      .vm-actions
+        select.form-control.distributions
+          - for distro in ['Arch Linux', 'Ubuntu Server', 'Fedora', 'FreeBSD', 'OpenNebula', 'SmartOS', 'ReactOS']
+            option = distro
+        .rocket-menu
+          img src='/img/logo/virtkick-logo-pixelart-gray-24.png'
+        .restart
           a.btn.btn-default.ctrlaltdel
-            i.fa-refresh.fa
-            |  Send Ctrl+Alt+Del
+            |  Reboot
           a.btn.btn-default.hardreset
-            i.fa-power-off.fa
             |  Hard reset
-          a.btn.btn-default.mountiso
-            i.fa-bolt.fa
-            |  Mount ISO as CD-ROM
-        div.distributions
-          | Choose Linux distribution: &nbsp;
-          select
-            - for distro in ['Arch Linux', 'Ubuntu Server', 'Fedora', 'FreeBSD', 'OpenNebula', 'SmartOS', 'ReactOS']
-              option = distro
-          a.btn.btn-primary Mount!
-         
-    div.btn.btn-default.rocket-menu
-      img src='/img/logo/virtkick-logo-pixelart-gray-24.png'
-  p.bright-violet
-    | If the VNC console doesn't appear, please upgrade your browser or trying a different one.
+    p.bright-violet
+      | If the VNC console doesn't appear, please upgrade your browser or trying a different one.
 
   = javascript_include_tag '/js/novnc.js'
 
@@ -32,11 +23,7 @@
   javascript:
     $(function() {
       $('.console').click(function() {
-        var console = $('.console-window');
-        var container = $('.main.container');
-        
-        console.width(container.innerWidth() - 204);
-        
+
         var rfb = new RFB({
           'target': $('canvas')[0],
           'repeaterID': '',
@@ -46,13 +33,23 @@
           'shared': true,
           'updateState': function() {},
           'onUpdateState': function(rfb, state, oldstate, statusMsg) {
-            var width = console.outerWidth() - 50;
-            var height = (console.outerWidth() - 50) * 0.75;
-            rfb.get_display().resize(width, height);
+            var canvas = $('.console-window canvas');
 
-            var overlay = console.find(".overlay");
-            overlay.width(width);
-            overlay.height(height);
+            if (state === "normal") {
+              var width = rfb.get_display().get_width();
+              var height = rfb.get_display().get_height();
+            } else {
+              var width = 640;
+              var height = 480;
+            }
+            canvas.width(width + "px");
+            canvas.height(height + "px");
+
+            var margin = 70;
+            var left = ($("#page-machine").width() - width - margin) / 2;
+            left -= $(".side-menu-wrapper").outerWidth() / 2;
+            $('.console-window').css("left", left);
+            return;
           },
           'view_only': false,
           'onPasswordRequired': function() {
@@ -84,7 +81,8 @@
         }
       });
 
-      $('.side-menu-wrapper .dropdown').click (function () {
+      $('.side-menu-wrapper .dropdown').click(function () {
         $(".side-menu").toggleClass("expanded");
       });
+
     });

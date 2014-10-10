@@ -132,7 +132,7 @@ input, .form-control input, select, .form-control select, .input-group input {
   @include box-shadow(none !important);
   border-color: $border-pink-color !important;
   border-style: solid !important;
-  border-width: 1px;
+  border-width: 1px !important;
 
   &:focus, &:active {
     border-color: $red-color !important;

@@ -207,13 +207,13 @@ h3 {
     // additional left menu margin for bigger resolutions
     #navbar-collapsable {
       padding-left: 15px;
-      @include transition(padding-left, 0.3s, ease-in, 0s); 
+      @include transition(padding-left, 0.2s, ease-in, 0s); 
     }
 
     @media (min-width: $screen-md-min) and (max-width: $screen-md-max) { 
       #navbar-collapsable {
         padding-left: 5px !important;
-        @include transition(padding-left, 0.3s, ease-in, 0s); 
+        @include transition(padding-left, 0.2s, ease-in, 0s); 
         padding-right: 5px;
       }
     }
@@ -221,14 +221,14 @@ h3 {
     @media (min-width: $screen-lg-min) { 
       #navbar-collapsable {
         padding-left: 30px;
-        @include transition(padding-left, 0.3s, ease-in, 0s); 
+        @include transition(padding-left, 0.2s, ease-in, 0s); 
         
       }
     }
 
     .side-menu { 
       width: 100%;
-      @include transition(width, 0.3s, ease-in, 0s);
+      @include transition(width, 0.2s, ease-in, 0s);
     }
 
     .dropdown {
@@ -242,7 +242,7 @@ h3 {
     &.collapsed {
       #navbar-collapsable {
         padding-left: 15px;
-        @include transition(padding-left, 0.3s, ease-in, 0s); 
+        @include transition(padding-left, 0.2s, ease-in, 0s); 
 
         @media (min-width: $screen-md-min) and (max-width: $screen-md-max) { 
           li a {
@@ -260,7 +260,7 @@ h3 {
         display: block;
         width: 82%;
         min-height: 48px;
-        @include transition(width, 0.3s, ease-in, 0s);
+        @include transition(width, 0.2s, ease-in, 0s);
 
         ul.nav {
           li {
@@ -279,8 +279,8 @@ h3 {
 
         &.expanded {
           ul.nav li {
-            @include transition(padding-top, 0.3s, ease-in, 0s); 
-            @include transition(padding-bottom, 0.3s, ease-in, 0s); 
+            @include transition(padding-top, 0.2s, ease-in, 0s); 
+            @include transition(padding-bottom, 0.2s, ease-in, 0s); 
             display: block;
 
             a {
@@ -290,12 +290,12 @@ h3 {
 
             &:first-child {
               padding-top: 20px;
-              @include transition(padding-top, 0.3s, ease-in, 0s); 
+              @include transition(padding-top, 0.2s, ease-in, 0s); 
             }
 
             &:last-child {
               padding-bottom: 20px;
-              @include transition(padding-bottom, 0.3s, ease-in, 0s); 
+              @include transition(padding-bottom, 0.2s, ease-in, 0s); 
             }
           }
         }
@@ -306,7 +306,7 @@ h3 {
         display: block;
         width: 18%;
         opacity: 1;
-        @include transition(opacity, 0.3s, ease-in, 0s); 
+        @include transition(opacity, 0.2s, ease-in, 0s); 
         
         .btn {
           padding: 10px 12px;
