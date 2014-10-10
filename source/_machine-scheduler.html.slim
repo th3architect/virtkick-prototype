@@ -61,7 +61,7 @@
         $('#page-scheduler .create-button').fadeOut(200, function () {
           $('#page-scheduler .new').fadeIn(200, function () {
             $('#page-scheduler .combobox').focus();
-            $('#page-scheduler .combobox').keydown(function() {
+            $('#page-scheduler .combobox').change(function() {
               $('#page-scheduler .new .next').text('2014-07-03 13:37');
               $('#page-scheduler .new .then').text('2014-07-08 13:37');
               $('#page-scheduler .new .next, #page-scheduler .new .then').addClass("visible");

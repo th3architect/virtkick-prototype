@@ -1,5 +1,15 @@
 #page-stats.text-center
-  - for stat in [['CPU usage', 'cpu'], ['I/O load', 'io'], ['Network traffic', 'network']]
-    .stat
-      h3 = stat[0]
-      img src="/img/machine-stats-#{stat[1]}.png"
+  .row
+    .col-sm-6
+      .stat
+        h3 CPU usage
+        img src="/img/machine-stats-cpu.png"
+    .col-sm-6
+      .stat
+        h3 I/O load
+        img src="/img/machine-stats-io.png"
+  .row
+    .col-sm-6
+      .stat
+        h3 Network traffic
+        img src="/img/machine-stats-network.png"

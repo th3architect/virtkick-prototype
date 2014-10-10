@@ -24,13 +24,13 @@
 
   .controls
     .btn-group
-      a.action.start.btn.btn-default type='button'
+      a.action.start.btn.btn-default.active type='button'
         i.fa.fa-play
         | &nbsp; Start
       a.action.pause.only-on.btn.btn-default type='button'
         i.fa.fa-pause
         | &nbsp; Pause
-      a.action.resume.only-on.btn.btn-default type='button'
+      a.action.resume.only-on.btn.btn-default.active type='button'
         i.fa.fa-forward
         | &nbsp; Resume
       a.action.stop.only-on.btn.btn-default type='button'
@@ -63,7 +63,7 @@
       $('#power .resume').hide();
 
       $('#power a.action').click(function() {
-        var state = $('#power').find('.power-state span');
+        var state = $('.header .btn-state .state-name, #power .power-state span');
         var action = $(this).text().toLowerCase().trim();
         var actions = {
           start: ['Starting', 'Running'],
@@ -77,6 +77,26 @@
 
         var changeState = function(newState) {
           state.text(newState);
+
+          var stateClass = "fa-play";
+          switch (newState) {
+            case "Paused":
+              stateClass = "fa-pause";
+              break;
+            case "Restarting":
+              stateClass = "fa-repeat";
+              break;
+            case "Stopped":
+              stateClass = "fa-stop";
+              break;
+            case "Stopping":
+              stateClass = "fa-stop";
+              break;
+          }
+
+          state.parent().find(".fa, .oi").each(function () {
+            $(this).replaceWith($('<i class="fa ' + stateClass + ' state state-running"></i>'));
+          });
         };
 
         var newState = actions[action][0];
@@ -89,7 +109,6 @@
           $('.' + showNewButton).show();
         }
 
-
         if (newStateAfterDelay) {
           setTimeout(function () {
             changeState(newStateAfterDelay);
@@ -97,15 +116,37 @@
         }
       });
 
+      $('#power .resume').hide();
+
       $('#power a.start').click(function() {
-        $('.state').addClass('state-running');
         $('.only-on').removeClass('disabled');
         $('.start').addClass('disabled');
+        $('.action').removeClass('active');
+        $('.start').addClass('active');
+        $('#power .resume').hide();
+        $('#power .pause').show();
       });
       $('#power a.stop').click(function() {
-        $('.state').removeClass('state-running');
         $('.only-on').addClass('disabled');
         $('.start').removeClass('disabled');
+        $('.action').removeClass('active');
+        $('.stop').addClass('active');
+      });
+      $('#power a.pause').click(function() {
+        $('.action').removeClass('active');
+        $('.resume').addClass('active');
+      });
+      $('#power a.resume').click(function() {
+        $('.action').removeClass('active');
+        $('.start').addClass('active');
+      });
+      $('#power a.restart').click(function() {
+        $('.action').removeClass('active');
+        $('.restart').addClass('active');
+        setTimeout(function () {
+          $('.action').removeClass('active');
+          $('.start').addClass('active');
+        }, 1.5 * 1000);
       });
 
       $('.screenshot a').click(function() {

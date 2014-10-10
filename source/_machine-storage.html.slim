@@ -5,8 +5,7 @@
       | Create a new disk
     div.new
       div.name
-        input.form-control placeholder='disk name'
-        |  .qcow2
+        | vdd
       div.type
         select.form-control
           option SSD
@@ -18,7 +17,7 @@
           option 100
           option 250
         |  GB &nbsp;
-      a.btn.btn-primary.save-button Save
+      a.btn.btn-primary.save-button Create
 
   table.table.table-striped.text-left
     thead
@@ -28,7 +27,7 @@
         th.type Type
         th.size Size
     tbody
-      - for disk in [['root.qcow2', 'SSD', '20 GB'], ['home.qcow2', 'SSD', '40 GB'], ['backup.qcow2', 'HDD', '100 GB']]
+      - for disk in [['vda', 'SSD', '20 GB'], ['vdb', 'SSD', '40 GB'], ['vdc', 'HDD', '100 GB']]
         tr
           td.name
             = disk[0]
@@ -49,10 +48,6 @@
 - content_for :scripts do
   javascript:
     $(function() {
-      $('a.expand').click(function() {
-        $(this).closest('tr').nextAll('tr.snapshot').slice(0, 4).toggleClass('hidden');
-      });
-
       $('#page-storage .create-button').click(function() {
         $('#page-storage .create-button').fadeOut(200, function () {
           $('#page-storage .new').fadeIn(200);

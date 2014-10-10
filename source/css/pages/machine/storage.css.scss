@@ -8,6 +8,7 @@
 
     .btn {
       padding: 15px 35px;
+      width: 210px;
 
       &.save-button {
         margin-left: 10px;
@@ -51,22 +52,30 @@
     }    
   }
 
-  table { 
-    th.name {
-      width: 38%;
+  table {
+    @mixin nowrap {
+      width: 1px !important;
+      white-space: nowrap;
     }
 
-    th.actions {
-      width: 40%;
+    .name {
+      @include nowrap;
     }
 
-    th.type {
-      width: 10%;
+    .actions {
+      width: 100%;
+      text-align: right;
     }
 
-    th.size {
-      width: 12%;
+    .type {
+      text-align: right;
+      @include nowrap;
     }
 
+    .size {
+      margin-right: 8px;
+      text-align: right;
+      @include nowrap;
+    }
   }
 }
