@@ -10,9 +10,10 @@
       position: absolute;
       box-sizing: border-box;
       padding: 35px 35px 15px 35px;
-      margin-bottom: 30px;
+      margin-bottom: 50px;
       border-radius: 4px;
       background-color: $cream-color;
+      @include transition(margin-left, 0.5s, ease-in, 0s);
 
       .canvas-wrapper {
         box-sizing: border-box;
@@ -20,6 +21,8 @@
         border-radius: 4px;
         
         canvas {
+          @include transition(width, 0.5s, ease-in, 0s);
+          @include transition(height, 0.5s, ease-in, 0s);
           width: 640px;
           height: 480px;
         }
@@ -27,39 +30,62 @@
 
       .vm-actions {
         width: 100%;
+        padding-top: 13px;
         text-align: center;
+        position: relative;
 
         .distributions {
-          margin-top: 5px;
           float: left;
           width: auto;
           background-color: transparent;
-          color: $bright-violet-color
+          color: $bright-violet-color;
+          padding: 8px 30px;
+          border:  1px solid $muted-violet-color !important;
+          border-radius: 4px;
+          cursor: pointer;
+          @include transition(background-color, 0.2s, ease-in, 0s);
+
+          &:focus, &:hover {
+            background-color: darken($cream-color, 10%);
+            @include transition(background-color, 0.2s, ease-in, 0s);
+          }
         }
 
         .rocket-menu {
-          margin-top: 10px;
-          display: inline-block;
+          position: absolute;
+          top: 20px;
+          left: 50%;
+          margin-left: -12px;
         }
 
         .restart {
           float: right;
 
           .ctrlaltdel, .hardreset{
-            padding: 10px 10px;
-            border:  1px solid $cream-color !important;
+            margin-left: 20px;
+            padding: 8px 30px;
+            color: $bright-violet-color;
+            border:  1px solid $muted-violet-color !important;
             text-align: left;
             margin-top: 0px;
             i {
               margin-right: 10px;
             }
+            &:active {
+              background-color: darken($cream-color, 23%);
+            }
           }
         }
       }
-    }
 
-    p.bright-violet {
-      margin-top: 20px;
+      p.browser-info {
+        position: absolute;
+        top: 220px;
+        left: 0px;
+        padding-left: 150px;
+        padding-right: 150px;
+        margin-top: 20px;
+      }
     }
   }
 }

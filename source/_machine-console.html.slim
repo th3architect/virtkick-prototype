@@ -4,7 +4,7 @@
       .canvas-wrapper
         canvas
       .vm-actions
-        select.form-control.distributions
+        select.distributions
           - for distro in ['Arch Linux', 'Ubuntu Server', 'Fedora', 'FreeBSD', 'OpenNebula', 'SmartOS', 'ReactOS']
             option = distro
         .rocket-menu
@@ -14,8 +14,8 @@
             |  Reboot
           a.btn.btn-default.hardreset
             |  Hard reset
-    p.bright-violet
-      | If the VNC console doesn't appear, please upgrade your browser or trying a different one.
+      p.bright-violet.browser-info
+        | If the VNC console doesn't appear, please upgrade your browser or try a different one.
 
   = javascript_include_tag '/js/novnc.js'
 
@@ -38,6 +38,9 @@
             if (state === "normal") {
               var width = rfb.get_display().get_width();
               var height = rfb.get_display().get_height();
+
+              // hide browser monit
+              $(".browser-info").remove();
             } else {
               var width = 640;
               var height = 480;
@@ -48,7 +51,7 @@
             var margin = 70;
             var left = ($("#page-machine").width() - width - margin) / 2;
             left -= $(".side-menu-wrapper").outerWidth() / 2;
-            $('.console-window').css("left", left);
+            $('.console-window').css("margin-left", left);
             return;
           },
           'view_only': false,
