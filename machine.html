@@ -1,0 +1,258 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>Prototype: VirtKick, 1-Click Cloud Management</title><meta content="A prototype of VirtKick, a user-oriented cloud management center." name="description" /><meta content="width=device-width" name="viewport" /><link href="/favicon.ico" rel="shortcut icon" /><link href="/css/virtkick-ced54c8e.css" rel="stylesheet" /><script src="/js/snippets-3d56de43.js" type="text/javascript"></script></head><body><div class="crowdfunding"><p><a href="https://www.indiegogo.com/projects/virtkick-take-cloud-back">WE ARE CROWDFUNDING »</a></p><br /><div class="hn">We're sorry, but you HN'ed us. Our 128 GB hypervisor wasn't enough.<br />We're showing a static HTML prototype instead. We'll get better soon!</div></div><div class="mobile-newsletter hidden-md hidden-lg"><div class="container"><div class="newsletter text-center"><div class="description"><p>VirtKick a simple, open source alternative to OpenStack and SolusVM.</p><p>This is just a static prototype. If you're looking for a real application, check out the sources on <a href="https://github.com/virtkick">GitHub</a>.
+</p><h3>Sign up for updates:</h3></div><form action="https://virtkick.us8.list-manage.com/subscribe/post?u=b74a227fdbddc9f590a62114e&amp;id=08823d8a7b" class="form-inline" method="post" role="form"><div class="input-group"><input class="newsletter-email form-control input" name="EMAIL" placeholder="e-mail address" type="text" /><span class="input-group-btn"><input class="btn btn-primary" name="subscribe" type="submit" value="go!" /></span></div></form><p class="result" data-success="Thanks! Please check your e-mail."></p></div></div></div><div class="container main"><div class="row header"><div class="menu col-md-3 hidden-xs hidden-sm"><a href="/"><img src="/img/logo/virtkick-logo-pixelart-64-9cd6e68d.png" /></a></div><div class="header col-md-6"><h1><span class="oi oi-monitor"></span>HTTP server<div class="btn btn-state"><i class="fa fa-play state state-running"></i><span class="state-name">Running</span>...</div></h1></div><div class="action col-md-3"></div></div><div class="row"><div class="col-md-3 side-menu-wrapper"><nav class="navbar navbar-default side-menu" role="navigation"><div class="navbar-header hidden-md hidden-lg"><button class="navbar-toggle" data-target="#navbar-collapsable" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img class="pix" src="/img/logo/virtkick-logo-pixelart-48-990b8123.png" /> virt<span class="kick">kick</span></a></div><div class="collapse navbar-collapse" id="navbar-collapsable"><ul class="nav navbar-nav"><li>
+  <a href="/">
+    <span class="oi oi-monitor"></span><span class="menu-item">Machines</span>
+  </a>
+</li><li>
+  <a href="/images.html">
+    <span class="oi oi-aperture"></span><span class="menu-item">Images</span>
+  </a>
+</li><li>
+  <a href="/addons.html">
+    <span class="oi oi-beaker"></span><span class="menu-item">Add-ons</span>
+  </a>
+</li><li>
+  <a href="/billing.html">
+    <span class="oi oi-credit-card"></span><span class="menu-item">Billing</span>
+  </a>
+</li><li>
+  <a href="/support.html">
+    <span class="oi oi-flag"></span><span class="menu-item">Support</span>
+  </a>
+</li><li class="home">
+  <a href="https://www.virtkick.io">
+    <span class="fa fa-rocket"></span><span class="menu-item">VirtKick.io</span>
+  </a>
+</li></ul></div></nav><div class="dropdown"><button class="btn btn-primary"><span class="caret"></span></button></div><div class="desktop-newsletter hidden-xs hidden-sm text-center"><div class="newsletter text-center"><div class="description"><p>VirtKick a simple, open source alternative to OpenStack and SolusVM.</p><p>This is just a static prototype. If you're looking for a real application, check out the sources on <a href="https://github.com/virtkick">GitHub</a>.
+</p><h3>Sign up for updates:</h3></div><form action="https://virtkick.us8.list-manage.com/subscribe/post?u=b74a227fdbddc9f590a62114e&amp;id=08823d8a7b" class="form-inline" method="post" role="form"><div class="input-group"><input class="newsletter-email form-control input" name="EMAIL" placeholder="e-mail address" type="text" /><span class="input-group-btn"><input class="btn btn-primary" name="subscribe" type="submit" value="go!" /></span></div></form><p class="result" data-success="Thanks! Please check your e-mail."></p></div></div></div><div class="col-md-9"><div id="page-machine"><ul class="nav nav-pills nav-justified"><li class="active"><a class="power" data-toggle="tab" href="#power">Power</a></li><li><a class="console" data-toggle="tab" href="#console">Console</a></li><li><a class="stats" data-toggle="tab" href="#stats">Stats</a></li><li><a class="storage" data-toggle="tab" href="#storage">Storage</a></li><li><a class="scheduler" data-toggle="tab" href="#scheduler">Scheduler</a></li><li><a class="settings" data-toggle="tab" href="#settings">Settings</a></li></ul><div class="tab-content"><div class="tab-pane active" id="power"><div id="page-power"><div class="row stats"><div class="col-sm-3"><div class="key">Memory:</div><div class="val bigger">2 GB</div></div><div class="col-sm-3"><div class="key">Processors:</div><div class="val">2 CPU</div><div class="progress"><div aria-valuemax="160" aria-valuemin="0" aria-valuenow="42" class="progress-bar real" role="progressbar" style="width: 42%"><span class="sr-only">42%</span></div></div></div><div class="col-sm-3"><div class="key">Storage:</div><div class="val">160 GB</div><div class="progress"><div aria-valuemax="160" aria-valuemin="0" aria-valuenow="23" class="progress-bar" role="progressbar" style="width: 23%"><span class="sr-only">23%</span></div></div></div><div class="col-sm-3"><div class="key">State:</div><div class="val power-state bigger"><i class="fa fa-play"></i><span>Running</span></div></div></div><div class="controls"><div class="btn-group"><a class="action start btn btn-default active" type="button"><i class="fa fa-play"></i>&nbsp; Start</a><a class="action pause only-on btn btn-default" type="button"><i class="fa fa-pause"></i>&nbsp; Pause</a><a class="action resume only-on btn btn-default active" type="button"><i class="fa fa-forward"></i>&nbsp; Resume</a><a class="action stop only-on btn btn-default" type="button"><i class="fa fa-stop"></i>&nbsp; Stop</a><div class="btn-group"><button class="only-on btn btn-default dropdown-toggle" data-toggle="dropdown" type="button"><i class="fa fa-caret-down"></i></button><ul class="dropdown-menu"><li><a class="stop only-on action" href="#"><span class="fa fa-power-off"></span>&nbsp; Hard stop</a></li></ul></div><a class="action restart only-on btn btn-default" type="button"><i class="fa fa-repeat"></i>&nbsp; Restart</a><div class="btn-group"><button class="only-on btn btn-default dropdown-toggle" data-toggle="dropdown" type="button"><i class="fa fa-caret-down"></i></button><ul class="dropdown-menu"><li><a class="restart only-on action" href="#"><span class="fa fa-power-off"></span>&nbsp; Hard reset</a></li></ul></div></div></div></div></div><div class="tab-pane" id="console"><div class="text-center" id="page-console"><div class="console-window-wrapper"><div class="console-window"><div class="canvas-wrapper"><canvas></canvas></div><div class="vm-actions"><select class="distributions"><option>Arch Linux</option><option>Ubuntu Server</option><option>Fedora</option><option>FreeBSD</option><option>OpenNebula</option><option>SmartOS</option><option>ReactOS</option></select><div class="rocket-menu"><img src="/img/logo/virtkick-logo-pixelart-gray-24-67b0e268.png" /></div><div class="restart"><a class="btn btn-default ctrlaltdel"> Reboot</a><a class="btn btn-default hardreset"> Hard reset</a></div></div><p class="bright-violet browser-info">If the VNC console doesn't appear, please upgrade your browser or try a different one.</p></div></div><script src="/js/novnc-01c8a814.js" type="text/javascript"></script></div></div><div class="tab-pane" id="stats"><div class="text-center" id="page-stats"><div class="row"><div class="col-sm-6"><div class="stat"><h3>CPU usage</h3><img src="/img/machine-stats-cpu-a7ab6282.png" /></div></div><div class="col-sm-6"><div class="stat"><h3>I/O load</h3><img src="/img/machine-stats-io-36d4a9b8.png" /></div></div></div><div class="row"><div class="col-sm-6"><div class="stat"><h3>Network traffic</h3><img src="/img/machine-stats-network-747b0ffd.png" /></div></div></div></div></div><div class="tab-pane" id="storage"><div class="text-center" id="page-storage"><div class="create text-right"><a class="btn btn-primary create-button">Create a new disk</a><div class="new"><div class="name">vdd</div><div class="type"><select class="form-control"><option>SSD</option><option>HDD</option></select></div><div class="size"><select class="size form-control"><option>20</option><option>50</option><option>100</option><option>250</option></select> GB &nbsp;</div><a class="btn btn-primary save-button">Create</a></div></div><table class="table table-striped text-left"><thead><tr><th class="name">Disk name</th><th class="actions"></th><th class="type">Type</th><th class="size">Size</th></tr></thead><tbody><tr><td class="name">vda</td><td class="actions"><div class="buttons"><a class="btn"><span class="oi oi-resize-both"></span><span class="action">Resize</span></a><a class="btn"><span class="oi oi-aperture"></span><span class="action">Snapshot</span></a><a class="btn"><span class="oi oi-delete"></span><span class="action">Delete</span></a></div></td><td class="type">SSD</td><td class="size">20 GB</td></tr><tr><td class="name">vdb</td><td class="actions"><div class="buttons"><a class="btn"><span class="oi oi-resize-both"></span><span class="action">Resize</span></a><a class="btn"><span class="oi oi-aperture"></span><span class="action">Snapshot</span></a><a class="btn"><span class="oi oi-delete"></span><span class="action">Delete</span></a></div></td><td class="type">SSD</td><td class="size">40 GB</td></tr><tr><td class="name">vdc</td><td class="actions"><div class="buttons"><a class="btn"><span class="oi oi-resize-both"></span><span class="action">Resize</span></a><a class="btn"><span class="oi oi-aperture"></span><span class="action">Snapshot</span></a><a class="btn"><span class="oi oi-delete"></span><span class="action">Delete</span></a></div></td><td class="type">HDD</td><td class="size">100 GB</td></tr></tbody></table></div></div><div class="tab-pane" id="scheduler"><div class="text-center" id="page-scheduler"><p class="bright-violet">Schedule machine lifecycle events like start, stop or restart with a cron-like syntax.</p><div class="create text-right"><a class="btn btn-primary create-button">Create a new event</a><div class="new"><div class="action"><select class="fa form-control"><option>&#xf04b; start</option><option>&#xf04d; stop</option><option>&#xf01e; restart</option><option>&#xf04c; pause</option></select></div><div class="cron"><select class="combobox"><option></option><option>every day at midnight</option><option>every week on Sunday midnight</option><option>on the 1st day of month</option><option>on the last day of month</option></select></div><div class="next">2014-07-03 13:37</div><div class="then">2014-07-08 13:37</div><a class="btn btn-primary save-button">Save</a></div></div><table class="table table-striped text-left"><thead><tr><th class="action">Action</th><th class="cron">Cron rule</th><th class="actions"></th><th class="next">Next on</th><th class="then">Then on</th></tr></thead><tbody><tr><td class="action"><i class="fa fa-play">&nbsp;</i>start</td><td class="cron">0 12 * * *</td><td class="actions"><div class="buttons"><a class="btn"><span class="fa fa-edit"></span><span class="action">Edit</span></a><a class="btn"><span class="oi oi-delete"></span><span class="action">Delete</span></a></div></td><td class="next">2014-06-28 12:00</td><td class="then">2014-06-29 12:00</td></tr><tr><td class="action"><i class="fa fa-stop">&nbsp;</i>stop</td><td class="cron">30 12 * * *</td><td class="actions"><div class="buttons"><a class="btn"><span class="fa fa-edit"></span><span class="action">Edit</span></a><a class="btn"><span class="oi oi-delete"></span><span class="action">Delete</span></a></div></td><td class="next">2014-06-28 12:30</td><td class="then">2014-06-29 12:30</td></tr></tbody></table></div></div><div class="tab-pane" id="settings"><div id="page-settings"><h3>Networks</h3><label><input checked="checked" type="checkbox" /> global network</label><br /><label><input checked="checked" type="checkbox" /> IPv6 for global network</label><br /><label><input type="checkbox" /> private network between your VMs</label><h3>CD image</h3><label><input checked="checked" type="checkbox" /> mount ISO as CD-ROM &nbsp;<select><option>Arch Linux</option><option>Ubuntu Server</option><option>Fedora</option><option>FreeBSD</option><option>OpenNebula</option><option>SmartOS</option><option>ReactOS</option></select></label><h3>Users</h3><p>These users are able to manage this machine as well:</p><ul class="users"><li><a class="user"><i class="fa fa-times"></i></a> kwiat (kwiat@mailinator.com)</li><li><a class="user"><i class="fa fa-times"></i></a> Rush (rush@mailinator.com)</li><li><a class="user"><i class="fa fa-times"></i></a> m13 (m13@mailinator.com)</li><li><a class="user"><i class="fa fa-times"></i></a> johndoe (johndoe@mailinator.com)</li></ul><h3>Danger Zone</h3><p><button class="btn btn-danger">Transfer ownership</button></p><p><button class="btn btn-danger">Delete machine</button></p></div></div></div></div></div></div></div><script src="/js/virtkick-c2ed93bb.js"></script><script type="text/javascript">$(function() {
+  $('#power .resume').hide();
+
+  $('#power a.action').click(function() {
+    var state = $('.header .btn-state .state-name, #power .power-state span');
+    var action = $(this).text().toLowerCase().trim();
+    var actions = {
+      start: ['Starting', 'Running'],
+      pause: ['Paused', null, 'resume'],
+      resume: ['Running', null, 'pause'],
+      stop: ['Stopping', 'Stopped'],
+      restart: ['Restarting', 'Running'],
+      'hard stop': ['Stopped'],
+      'hard reset': ['Starting', 'Running']
+    };
+
+    var changeState = function(newState) {
+      state.text(newState);
+
+      var stateClass = "fa-play";
+      switch (newState) {
+        case "Paused":
+          stateClass = "fa-pause";
+          break;
+        case "Restarting":
+          stateClass = "fa-repeat";
+          break;
+        case "Stopped":
+          stateClass = "fa-stop";
+          break;
+        case "Stopping":
+          stateClass = "fa-stop";
+          break;
+      }
+
+      state.parent().find(".fa, .oi").each(function () {
+        $(this).replaceWith($('<i class="fa ' + stateClass + ' state state-running"></i>'));
+      });
+    };
+
+    var newState = actions[action][0];
+    var newStateAfterDelay = actions[action][1];
+    var showNewButton = actions[action][2];
+
+    changeState(newState, showNewButton);
+    if (showNewButton) {
+      $(this).hide();
+      $('.' + showNewButton).show();
+    }
+
+    if (newStateAfterDelay) {
+      setTimeout(function () {
+        changeState(newStateAfterDelay);
+      }, 1.5 * 1000);
+    }
+  });
+
+  $('#power .resume').hide();
+
+  $('#power a.start').click(function() {
+    $('.only-on').removeClass('disabled');
+    $('.start').addClass('disabled');
+    $('.action').removeClass('active');
+    $('.start').addClass('active');
+    $('#power .resume').hide();
+    $('#power .pause').show();
+  });
+  $('#power a.stop').click(function() {
+    $('.only-on').addClass('disabled');
+    $('.start').removeClass('disabled');
+    $('.action').removeClass('active');
+    $('.stop').addClass('active');
+  });
+  $('#power a.pause').click(function() {
+    $('.action').removeClass('active');
+    $('.resume').addClass('active');
+  });
+  $('#power a.resume').click(function() {
+    $('.action').removeClass('active');
+    $('.start').addClass('active');
+  });
+  $('#power a.restart').click(function() {
+    $('.action').removeClass('active');
+    $('.restart').addClass('active');
+    setTimeout(function () {
+      $('.action').removeClass('active');
+      $('.start').addClass('active');
+    }, 1.5 * 1000);
+  });
+
+  $('.screenshot a').click(function() {
+    $('.console').click();
+  });
+});</script><script type="text/javascript">$(function() {
+  var rfb;
+
+  function updateConsole() {
+    var canvas = $('.console-window .canvas-wrapper');
+
+    if (!rfb) {
+      var width = 640;
+      var height = 480;
+    } else {
+      var width = rfb.get_display().get_width();
+      var height = rfb.get_display().get_height();
+    }
+
+    // after connecting first noVNC frames are not real screens, so catch only 
+    // realistic sizes to avoid console flickering
+    if (height <= 20) {
+      return;
+    }
+
+    canvas.width(width + "px");
+    canvas.height(height + "px");
+
+    var margin = 70;
+    var left = ($("#page-machine").width() - width - margin) / 2;
+    left -= $(".side-menu-wrapper").outerWidth() / 2;
+
+    $('.console-window').css("margin-left", left);
+  }
+
+  $('.console').click(function() {
+
+    rfb = new RFB({
+      'target': $('canvas')[0],
+      'repeaterID': '',
+      'encrypt': true,
+      'true_color': true,
+      'local_cursor': true,
+      'shared': true,
+      'onUpdateState': function(rfb, state, oldstate, statusMsg) {
+        if (state === "normal") {
+          // hide browser monit
+          $(".browser-info").remove();
+        }
+        return;
+      },
+      'onFBUComplete': function (rfb, fbu) {
+        updateConsole();
+      },
+      'view_only': false,
+      'onPasswordRequired': function() {
+        console.log('VNC: Password required');
+      }
+    });
+
+    var host = 'asgard.pacmanvps.com';
+    var port = 6923;
+    var password = null;
+
+    rfb.connect(host, port, password, '');
+
+    $('.ctrlaltdel').click(function() {
+      rfb.sendCtrlAltDel();
+    });
+
+    $('.nav-tabs a').click(function() {
+      rfb.disconnect();
+    });
+
+    $('.side-menu-wrapper').addClass("collapsed");
+  });
+
+  $('#page-machine .nav li').click(function (e) {          
+    if ($(e.currentTarget).find(".console").length == 0) {
+      $('.side-menu-wrapper').removeClass("collapsed");
+      $(".side-menu").removeClass("expanded");
+    }
+  });
+
+  $('.side-menu-wrapper .dropdown').click(function () {
+    $(".side-menu").toggleClass("expanded");
+  });
+
+  $(window).resize(function () {
+    updateConsole();
+  });
+
+  updateConsole();
+});</script><script type="text/javascript">$(function() {
+  $('#page-storage .create-button').click(function() {
+    $('#page-storage .create-button').fadeOut(200, function () {
+      $('#page-storage .new').fadeIn(200);
+    });
+  });
+
+  $('#page-storage .save-button').click(function() {
+    $('#page-storage .new').fadeOut(200, function () {
+      $('#page-storage .create-button').fadeIn(200);
+    });
+  });
+
+});</script><script type="text/javascript">$(function() {
+  $('#page-scheduler .combobox').combobox();
+
+  $('#page-scheduler .create-button').click(function() {
+    $('#page-scheduler .create-button').fadeOut(200, function () {
+      $('#page-scheduler .new').fadeIn(200, function () {
+        $('#page-scheduler .combobox').focus();
+        $('#page-scheduler .combobox').change(function() {
+          $('#page-scheduler .new .next').text('2014-07-03 13:37');
+          $('#page-scheduler .new .then').text('2014-07-08 13:37');
+          $('#page-scheduler .new .next, #page-scheduler .new .then').addClass("visible");
+        })
+      });
+    });
+  });
+
+  $('#page-scheduler .save-button').click(function() {
+    $('#page-scheduler .new').fadeOut(200, function () {
+      $('#page-scheduler .create-button').fadeIn(200);
+      $('#page-scheduler .new .next, #page-scheduler .new .then').removeClass("visible");
+    });
+  });
+
+});</script><script type="text/javascript">$(function() {
+  $('#page-settings a.user').click(function() {
+    $(this).closest('li').remove();
+  });
+});</script><script type="text/javascript">$(function() {
+  var hash = window.location.hash.substring(1);
+  if (hash.length > 0) {
+    $('a.' + hash).click();
+  }
+
+  $('.nav-tabs a').click(function() {
+    window.location.hash = $(this).attr('class');
+  });
+});</script><!--[if lte IE 8]><div id="old-browser"><script type="text/javascript">document.getElementById('page').style.display = 'none';</script><div>You are using an outdated browser.<br/>
+Please <a href="http://browsehappy.com/">upgrade your browser</a> to access this website.</div></div><![endif]--></body></html>
