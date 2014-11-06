@@ -12,6 +12,12 @@ Visit [demo.virtkick.io](https://demo.virtkick.io/) to preview.
 The sources are licensed under GNU AGPLv3 or later, unless otherwise stated.
 See [LICENSE.md](https://github.com/virtkick/virtkick-prototype/blob/master/LICENSE.md).
 
+<p align="center">
+  <a href="https://www.indiegogo.com/projects/virtkick-take-cloud-back">
+    <img src="https://raw.github.com/virtkick/virtkick/master/indiegogo.png" />
+  </a>
+</p>
+
 ## Disclaimer
 
 This is MVP - a minimum viable product. We don't code like what you see in this repository! The [real webapp](https://github.com/virtkick/virtkick-webapp) is well-crafted with AngularJS and Rails.
